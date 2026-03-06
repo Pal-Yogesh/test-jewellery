@@ -272,7 +272,7 @@ export default function RingCustomizer() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#fafafa] border-t border-gray-100 py-20 lg:py-28 overflow-hidden"
+      className="relative bg-[#F0F0EC] border-t border-gray-100 py-20 lg:py-28 overflow-hidden"
     >
       {/* Grain texture */}
       <div

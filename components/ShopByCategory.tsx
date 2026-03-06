@@ -104,7 +104,7 @@ const icons: TrustItem[] = [
         <path d="M5 12h14M12 5l7 7-7 7" />
       </svg>
     ),
-    title: "Free Shipping", desc: "On all orders above ₹2,000",
+    title: "Free Shipping", desc: "On all orders above ₹200000",
   },
   {
     icon: (
@@ -595,7 +595,7 @@ export default function ShopByCategory() {
       </div>
 
       {/* ── BRAND PROMISE BANNER ── */}
-      <section className="relative overflow-hidden bg-[#0f0505] py-20">
+      <section className="relative overflow-hidden bg-red-950 py-20">
         <div
           className="absolute inset-0 opacity-[0.035]"
           style={{

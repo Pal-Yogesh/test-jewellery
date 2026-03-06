@@ -35,7 +35,7 @@ const ProductCard = ({ product, index }: { product: typeof PRODUCTS[0]; index: n
         <motion.button onClick={() => setWished(!wished)} className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 flex items-center justify-center" animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : -6 }} transition={{ duration: 0.25 }}>
           <svg width="14" height="14" fill={wished ? "#C8102E" : "none"} stroke={wished ? "#C8102E" : "currentColor"} strokeWidth="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         </motion.button>
-        <motion.button className="absolute bottom-0 left-0 right-0 bg-gray-900 text-white text-[10px] tracking-[.2em] uppercase font-bold py-3 hover:bg-[#C8102E] transition-colors" animate={{ y: hovered ? 0 : "100%" }} transition={{ duration: 0.3, ease: [0.22,1,0.36,1] }}>Quick Add</motion.button>
+        <motion.button className="absolute bottom-0 left-0 right-0 bg-red-900 text-white text-[10px] tracking-[.2em] uppercase font-bold py-3 hover:bg-[#C8102E] transition-colors" animate={{ y: hovered ? 0 : "100%" }} transition={{ duration: 0.3, ease: [0.22,1,0.36,1] }}>Quick Add</motion.button>
       </div>
       <StarRating rating={product.rating} />
       <p className="text-[10px] tracking-[.15em] uppercase text-[#C8102E] mt-1 mb-0.5">{product.designer}</p>
@@ -54,7 +54,7 @@ export default function FeaturedProducts() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true });
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-[#F0F0EC]">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <div ref={ref} className="flex items-end justify-between gap-6 mb-10 flex-wrap">
           <div>

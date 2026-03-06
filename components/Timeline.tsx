@@ -252,7 +252,7 @@ const CtaSection = () => {
       transition={{ duration: 0.7 }}
       className="text-center mt-20 lg:mt-28"
     >
-      <div className="relative overflow-hidden bg-[#0f0505] rounded-sm py-16 px-6 max-w-4xl mx-auto">
+      <div className="relative overflow-hidden bg-red-950 rounded-sm py-16 px-6 max-w-4xl mx-auto">
         {/* Grain texture */}
         <div
           className="absolute inset-0 opacity-[0.035] pointer-events-none"
@@ -351,7 +351,7 @@ export default function Timeline() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative bg-[#fafafa] py-20 lg:py-32 overflow-hidden">
+    <section ref={containerRef} className="relative bg-[#F0F0EC] py-20 lg:py-32 overflow-hidden">
       {/* Subtle background pattern */}
       <div
         className="timeline-bg absolute inset-0 opacity-[0.02] pointer-events-none"
@@ -367,7 +367,7 @@ export default function Timeline() {
       {/* Timeline */}
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Center line */}
-        <div className="absolute left-6 sm:left-1/2 sm:-translate-x-1/2 w-px h-full bg-gray-200">
+        <div className="absolute left-6 sm:left-1/2 sm:-translate-x-1/2 w-px h-[85%] bg-gray-200">
           <motion.div
             className="w-full bg-[#C8102E] origin-top"
             style={{ scaleY: lineProgress, height: "100%" }}

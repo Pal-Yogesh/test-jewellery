@@ -75,7 +75,7 @@ export default function GiftsBanner() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden bg-[#C8102E]"
+      className="relative w-full overflow-hidden bg-red-950"
       style={{ height: "clamp(320px, 42vw, 500px)" }}
     >
       {/* Diagonal scrolling image grid */}
@@ -92,14 +92,14 @@ export default function GiftsBanner() {
       </div>
 
       {/* Red overlay for cohesion */}
-      <div className="absolute inset-0 bg-[#C8102E]/25" />
+      <div className="absolute inset-0 bg-red-950/25" />
 
       {/* Left fade for text readability */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(105deg, #C8102E 0%, #C8102E 22%, rgba(200,16,46,0.7) 40%, rgba(200,16,46,0.2) 60%, transparent 80%)",
+            "linear-gradient(105deg, #C8102E 0%, #C8102E 42%, rgba(200,16,46,0.7) 50%, rgba(200,16,46,0.2) 60%, transparent 80%)",
         }}
       />
 
@@ -131,12 +131,11 @@ export default function GiftsBanner() {
           <h2
             className="text-white font-bold leading-[0.88] mb-2"
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(4rem, 10vw, 8rem)",
               letterSpacing: "-0.03em",
             }}
           >
-            GIFTS
+            JEWELS
           </h2>
 
           <p

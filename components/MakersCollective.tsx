@@ -135,7 +135,7 @@ export default function MakersCollective() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 sm:py-24 overflow-hidden bg-white"
+      className="relative py-16 sm:py-24 overflow-hidden bg-[#F0F0EC]"
     >
       {/* Blurred background */}
       <div className="absolute inset-0 overflow-hidden">
