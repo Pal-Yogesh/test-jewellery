@@ -53,7 +53,7 @@ export default function Footer() {
               >
                 <div className="flex flex-col items-start mb-6">
                   <div className="text-2xl font-serif tracking-wider text-white mb-1">
-                    NIMAI
+                    Brand
                   </div>
                   <div className="text-[10px] tracking-[.25em] uppercase text-stone-400">
                     Makers Collective
@@ -142,7 +142,7 @@ export default function Footer() {
                   <div className="flex items-start space-x-3">
                     <MapPin className="w-5 h-5 text-[#C8102E] mt-1 shrink-0" />
                     <div>
-                      <p className="text-stone-300 font-light text-sm">NIMAI Studio</p>
+                      <p className="text-stone-300 font-light text-sm">Brand Studio</p>
                       <p className="text-stone-400 font-light text-sm">
                         42, Linking Road, Bandra West,
                         Mumbai 400050, India
@@ -155,7 +155,7 @@ export default function Footer() {
                   </div>
                   <div className="flex items-center space-x-3">
                     <Mail className="w-5 h-5 text-[#C8102E] shrink-0" />
-                    <p className="text-stone-300 font-light text-sm">hello@nimai.in</p>
+                    <p className="text-stone-300 font-light text-sm">hello@Brand.in</p>
                   </div>
                 </div>
 
@@ -181,7 +181,7 @@ export default function Footer() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
               <p className="text-stone-400 font-light text-sm text-center sm:text-left">
-                © 2025 Nimai Makers Collective. All rights reserved.
+                © 2025 Brand Makers Collective. All rights reserved.
               </p>
               <div className="flex space-x-6 text-sm">
                 {["Privacy Policy", "Terms of Service", "Shipping Policy"].map((item) => (
