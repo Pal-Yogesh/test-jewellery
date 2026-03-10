@@ -141,7 +141,6 @@ export default function GiftsBanner() {
           <p
             className="text-white/60 tracking-[.35em] uppercase font-medium"
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(0.65rem, 1.1vw, 0.8rem)",
             }}
           >

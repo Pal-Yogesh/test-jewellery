@@ -19,22 +19,26 @@ const LINES = [
 const IMAGES = [
   {
     src: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
-    style: { top: "10%", left: "4%", maxWidth: "26vw" } as const,
+    desktop: { top: "10%", left: "4%", maxWidth: "26vw" },
+    mobile: { top: "6%", left: "3%", maxWidth: "42vw" },
     opacity: 1,
   },
   {
     src: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80",
-    style: { top: "30%", right: "5%", maxWidth: "24vw" } as const,
+    desktop: { top: "30%", right: "5%", maxWidth: "24vw" },
+    mobile: { top: "25%", right: "3%", maxWidth: "40vw" },
     opacity: 0.75,
   },
   {
     src: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80",
-    style: { top: "55%", left: "10%", maxWidth: "28vw" } as const,
+    desktop: { top: "55%", left: "10%", maxWidth: "28vw" },
+    mobile: { top: "50%", left: "5%", maxWidth: "44vw" },
     opacity: 0.75,
   },
   {
     src: "https://images.unsplash.com/photo-1573408301185-9519f94816b4?w=600&q=80",
-    style: { top: "70%", right: "8%", maxWidth: "26vw" } as const,
+    desktop: { top: "70%", right: "8%", maxWidth: "26vw" },
+    mobile: { top: "68%", right: "3%", maxWidth: "42vw" },
     opacity: 1,
   },
 ];
@@ -47,11 +51,24 @@ export default function TextDrop() {
   useEffect(() => {
     if (typeof window === "undefined" || !sectionRef.current) return;
 
+    const isMobile = window.innerWidth < 768;
+
+    // Apply responsive image positions
+    imagesRef.current.forEach((el, i) => {
+      if (!el) return;
+      const pos = isMobile ? IMAGES[i].mobile : IMAGES[i].desktop;
+      Object.assign(el.style, {
+        top: pos.top ?? "auto",
+        left: pos.left ?? "auto",
+        right: pos.right ?? "auto",
+        maxWidth: pos.maxWidth,
+      });
+    });
+
     const ctx = gsap.context(() => {
       const lines = linesRef.current.filter(Boolean) as HTMLDivElement[];
       const images = imagesRef.current.filter(Boolean) as HTMLDivElement[];
 
-      // Text drop: each line rotates from -120deg to 0
       lines.forEach((line) => {
         gsap.fromTo(
           line,
@@ -62,21 +79,18 @@ export default function TextDrop() {
             ease: "power2.out",
             scrollTrigger: {
               trigger: line,
-              start: "bottom bottom",
-              end: "bottom top",
+              start: isMobile ? "top 90%" : "bottom bottom",
+              end: isMobile ? "top 20%" : "bottom top",
               scrub: true,
             },
           }
         );
       });
 
-      // Images reveal: fade in as corresponding line scrolls
       lines.forEach((line, i) => {
         if (images[i]) {
-          const targetOpacity =
-            IMAGES[i]?.opacity ?? 1;
-          const startOffset =
-            window.innerWidth < 1024 ? "-=200" : "-=500";
+          const targetOpacity = IMAGES[i]?.opacity ?? 1;
+          const startOffset = isMobile ? "-=100" : window.innerWidth < 1024 ? "-=200" : "-=500";
 
           gsap.to(images[i], {
             opacity: targetOpacity,
@@ -84,18 +98,17 @@ export default function TextDrop() {
             ease: "power2.out",
             scrollTrigger: {
               trigger: line,
-              start: `bottom bottom${startOffset}`,
-              end: "bottom top",
+              start: isMobile ? `top 95%${startOffset}` : `bottom bottom${startOffset}`,
+              end: isMobile ? "top 20%" : "bottom top",
               scrub: true,
             },
           });
         }
       });
 
-      // Parallax on images
       images.forEach((el) => {
         gsap.to(el, {
-          y: -120,
+          y: isMobile ? -60 : -120,
           ease: "none",
           scrollTrigger: {
             trigger: el,
@@ -107,7 +120,13 @@ export default function TextDrop() {
       });
     }, sectionRef);
 
-    return () => ctx.revert();
+    const onResize = () => ScrollTrigger.refresh();
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      ctx.revert();
+      window.removeEventListener("resize", onResize);
+    };
   }, []);
 
   return (
@@ -116,12 +135,12 @@ export default function TextDrop() {
       style={{
         position: "relative",
         overflow: "hidden",
-        padding: "6rem 0 14rem",
+        padding: "4rem 0 10rem",
         perspective: "2000px",
         background: "#2C1215",
       }}
     >
-      {/* Ambient glow — warm red instead of cyan */}
+      {/* Ambient glows */}
       <div
         style={{
           position: "absolute",
@@ -153,7 +172,7 @@ export default function TextDrop() {
         }}
       />
 
-      {/* Images — positioned absolutely behind text */}
+      {/* Images */}
       {IMAGES.map((img, i) => (
         <div
           key={i}
@@ -164,7 +183,6 @@ export default function TextDrop() {
             opacity: 0.08,
             borderRadius: "0.5rem",
             transition: "opacity 0.5s",
-            ...img.style,
           }}
         >
           <img
@@ -192,10 +210,9 @@ export default function TextDrop() {
               textAlign: "center",
               width: "100%",
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(2.2rem, 9.5vw, 9rem)",
-              lineHeight: 1.3,
+              fontSize: "clamp(1.8rem, 9.5vw, 9rem)",
+              lineHeight: 1.35,
               fontWeight: 500,
-              whiteSpace: "nowrap",
               color: "white",
               transformOrigin: "50% 0",
               willChange: "transform",
@@ -203,6 +220,9 @@ export default function TextDrop() {
               transform: "rotateX(-120deg)",
               mixBlendMode: "difference",
               transformStyle: "preserve-3d",
+              padding: "0 1rem",
+              overflowWrap: "break-word",
+              wordBreak: "break-word",
             }}
           >
             {line}
@@ -210,11 +230,11 @@ export default function TextDrop() {
         ))}
       </div>
 
-      {/* Decorative elements matching site style */}
+      {/* Decorative footer */}
       <div
         style={{
           position: "absolute",
-          bottom: "3rem",
+          bottom: "2.5rem",
           left: "50%",
           transform: "translateX(-50%)",
           display: "flex",
@@ -223,14 +243,7 @@ export default function TextDrop() {
           zIndex: 2,
         }}
       >
-        <span
-          style={{
-            width: 24,
-            height: 1,
-            background: "rgba(200,16,46,0.5)",
-            display: "inline-block",
-          }}
-        />
+        <span style={{ width: 24, height: 1, background: "rgba(200,16,46,0.5)", display: "inline-block" }} />
         <span
           style={{
             fontSize: "0.65rem",
@@ -238,18 +251,12 @@ export default function TextDrop() {
             textTransform: "uppercase",
             color: "rgba(255,255,255,0.3)",
             fontWeight: 600,
+            whiteSpace: "nowrap",
           }}
         >
           ✦ Handcrafted Stories ✦
         </span>
-        <span
-          style={{
-            width: 24,
-            height: 1,
-            background: "rgba(200,16,46,0.5)",
-            display: "inline-block",
-          }}
-        />
+        <span style={{ width: 24, height: 1, background: "rgba(200,16,46,0.5)", display: "inline-block" }} />
       </div>
     </section>
   );
