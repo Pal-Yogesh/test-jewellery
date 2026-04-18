@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 const IMAGES = [
   "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=400&q=80",
@@ -76,6 +77,54 @@ export default function GiftsBanner() {
   ];
 
   return (
+
+    <>
+     {/* Boxes of products */}
+
+      <div className="px-5 sm:px-8 lg:px-18  py-14">
+        <div className="flex justify-center items-center gap-5">
+          <div>
+            <Image
+              src="https://shopnimai.in/cdn/shop/files/Frame_21.png?v=1765890566&width=900"
+              alt="img"
+              width={1000}
+              height={1000}
+              className="w-100% h-100%"
+            />
+            <div className="uppercase text-center pt-3">earrings</div>
+          </div>
+          <div>
+            <Image
+              src="https://shopnimai.in/cdn/shop/files/Frame_22.png?v=1765890565&width=900"
+              alt="img"
+              width={1000}
+              height={1000}
+              className="w-100% h-100%"
+            />
+            <div className="uppercase text-center pt-3">rings</div>
+          </div>
+          <div>
+            <Image
+              src="https://shopnimai.in/cdn/shop/files/Frame_20.png?v=1765890268&width=900"
+              alt="img"
+              width={1000}
+              height={1000}
+              className="w-100% h-100%"
+            />
+            <div className="uppercase text-center pt-3">neckpieces</div>
+          </div>
+          <div>
+            <Image
+              src="https://shopnimai.in/cdn/shop/files/Frame_23.png?v=1765890559&width=900"
+              alt="img"
+              width={1000}
+              height={1000}
+              className="w-100% h-100%"
+            />
+            <div className="uppercase text-center pt-3">bangles</div>
+          </div>
+        </div>
+      </div>
     <section
       ref={containerRef}
       className="relative w-full overflow-hidden bg-red-950"
@@ -172,5 +221,6 @@ export default function GiftsBanner() {
         className="absolute top-8 right-8 sm:right-14 w-16 h-16 border border-white/30 pointer-events-none"
       />
     </section>
+    </>
   );
 }

@@ -10,8 +10,8 @@ export default function Home() {
     <>
       <Hero />
       <GiftsBanner />
-      <SponsoredProduct />
       <ShopSection />
+      <SponsoredProduct />
       <OurDesigners />
       <TrustItemStrip />
     </>
