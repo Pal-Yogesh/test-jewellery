@@ -583,77 +583,12 @@ export default function ShopByCategory() {
 
   return (
     <main ref={sectionRef} className="bg-white">
-      {/* ── TRUST STRIP ── */}
-      <TrustStrip />
-
-      {/* ── MARQUEE ── */}
-      <MarqueeStrip />
-
       {/* ── STACKING CARDS: 3 sections ── */}
       <div className="px-4 sm:px-6 lg:px-8 py-12">
         <StackCards />
       </div>
 
-      {/* ── BRAND PROMISE BANNER ── */}
-      <section className="relative overflow-hidden bg-red-950 py-20">
-        <div
-          className="absolute inset-0 opacity-[0.035]"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-            backgroundSize: "200px",
-          }}
-        />
-        <div className="absolute left-[6%] top-8 w-px h-20 bg-linear-to-b from-transparent via-white/15 to-transparent" />
-        <div className="absolute right-[6%] bottom-8 w-px h-20 bg-linear-to-b from-transparent via-[#C8102E]/40 to-transparent" />
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-[11px] tracking-[.28em] uppercase text-[#C8102E] font-semibold flex items-center justify-center gap-3 mb-5"
-          >
-            <span className="w-8 h-px bg-[#C8102E]" />
-            Our Promise
-            <span className="w-8 h-px bg-[#C8102E]" />
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-white font-bold leading-[1.1] mb-6"
-            style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
-          >
-            Made by Hand,{" "}
-            <em className="italic text-[#C8102E]">Felt by Heart</em>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.65, delay: 0.2 }}
-            className="text-white/50 leading-relaxed mb-10 max-w-xl mx-auto"
-            style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.1rem" }}
-          >
-            India&apos;s first jewellery makers collective — connecting 40+ independent designers with those who appreciate the art of adornment.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <a href="/about" className="bg-[#C8102E] hover:bg-[#a00d24] text-white text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm transition-colors">
-              Our Story
-            </a>
-            <a href="/designers" className="border border-white/20 hover:border-[#C8102E] text-white/70 hover:text-white text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm transition-all">
-              Meet Designers
-            </a>
-          </motion.div>
-        </div>
-      </section>
+    
     </main>
   );
 }

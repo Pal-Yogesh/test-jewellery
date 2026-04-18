@@ -1,19 +1,19 @@
-import Banner from "@/components/Banner";
-import FeaturedProducts from "@/components/Featires";
 import GiftsBanner from "@/components/GiftsBanner";
-import ShopByCategory from "@/components/ShopByCategory";
+import Hero from "@/components/Hero";
+import OurDesigners from "@/components/OurDesigners";
+import ShopSection from "@/components/ShopSection";
 import SponsoredProduct from "@/components/SponsoredProduct";
-import TextDrop from "@/components/TextDrop";
+import TrustItemStrip from "@/components/TrustItemStrip";
 
 export default function Home() {
   return (
     <>
-      <Banner />
+      <Hero />
       <GiftsBanner />
-      <ShopByCategory />
       <SponsoredProduct />
-      <TextDrop />
-      <FeaturedProducts />
+      <ShopSection />
+      <OurDesigners />
+      <TrustItemStrip />
     </>
   );
 }

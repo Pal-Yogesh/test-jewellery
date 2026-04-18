@@ -7,8 +7,6 @@ import {
   Controller,
   Navigation,
   Autoplay,
-  Mousewheel,
-  Keyboard,
 } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 
@@ -132,13 +130,11 @@ export default function SponsoredProduct() {
       {/* ── Titles Slider (main driver) ── */}
       <div className="sponsored-titles">
         <Swiper
-          modules={[Controller, Navigation, Autoplay, Mousewheel, Keyboard]}
+          modules={[Controller, Navigation, Autoplay]}
           slidesPerView="auto"
           speed={600}
           slideToClickedSlide
           centeredSlides
-          mousewheel
-          keyboard
           autoplay={{ delay: 3500, disableOnInteraction: false }}
           navigation={{
             prevEl: prevRef.current,

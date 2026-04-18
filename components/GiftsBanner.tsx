@@ -47,11 +47,7 @@ function ImageRow({
             key={`${rowIndex}-${i}`}
             className="relative w-[140px] h-[140px] sm:w-[170px] sm:h-[170px] rounded-xl overflow-hidden shrink-0"
           >
-            <img
-              src={src}
-              alt=""
-              className="w-full h-full object-cover"
-            />
+            <img src={src} alt="" className="w-full h-full object-cover" />
             {/* Red tint */}
             <div className="absolute inset-0 bg-[#C8102E]/45 mix-blend-multiply" />
             {/* Subtle inner shadow */}
@@ -70,13 +66,25 @@ export default function GiftsBanner() {
   // Shuffle images differently per row
   const row1 = [...IMAGES];
   const row2 = [...IMAGES].reverse();
-  const row3 = [IMAGES[2], IMAGES[0], IMAGES[4], IMAGES[1], IMAGES[5], IMAGES[3]];
+  const row3 = [
+    IMAGES[2],
+    IMAGES[0],
+    IMAGES[4],
+    IMAGES[1],
+    IMAGES[5],
+    IMAGES[3],
+  ];
 
   return (
     <section
       ref={containerRef}
       className="relative w-full overflow-hidden bg-red-950"
-      style={{ height: "clamp(320px, 42vw, 500px)" }}
+      style={{
+        height: "clamp(320px, 40vw, 450px)",
+        fontFamily: "'Cormorant Garamond', serif",
+        fontSize: "clamp(3rem, 6vw, 5.2rem)",
+        letterSpacing: "-0.03em",
+      }}
     >
       {/* Diagonal scrolling image grid */}
       <div
@@ -119,24 +127,8 @@ export default function GiftsBanner() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          {/* Decorative line */}
-          <motion.div
-            className="w-10 h-[2px] bg-white/40 mb-5"
-            initial={{ scaleX: 0 }}
-            animate={inView ? { scaleX: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            style={{ transformOrigin: "left" }}
-          />
 
-          <h2
-            className="text-white font-bold leading-[0.88] mb-2"
-            style={{
-              fontSize: "clamp(4rem, 10vw, 8rem)",
-              letterSpacing: "-0.03em",
-            }}
-          >
-            JEWELS
-          </h2>
+          <h2 className="text-white font-bold leading-[0.88] mb-2">JEWELS</h2>
 
           <p
             className="text-white/60 tracking-[.35em] uppercase font-medium"
@@ -158,7 +150,12 @@ export default function GiftsBanner() {
         >
           Shop Gifts
           <svg
-            width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"
+            width="14"
+            height="14"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            viewBox="0 0 24 24"
             className="group-hover:translate-x-1 transition-transform"
           >
             <line x1="5" y1="12" x2="19" y2="12" />
