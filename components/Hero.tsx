@@ -15,7 +15,10 @@ export default function Hero() {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
 
-  const next = useCallback(() => setCurrent((c) => (c + 1) % SLIDES.length), []);
+  const next = useCallback(
+    () => setCurrent((c) => (c + 1) % SLIDES.length),
+    [],
+  );
   const prev = () => setCurrent((c) => (c - 1 + SLIDES.length) % SLIDES.length);
 
   useEffect(() => {
@@ -52,7 +55,14 @@ export default function Hero() {
         className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center bg-white/80 hover:bg-white transition-colors rounded-full shadow"
         aria-label="Previous"
       >
-        <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <svg
+          width="16"
+          height="16"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
           <polyline points="15 18 9 12 15 6" />
         </svg>
       </button>
@@ -61,10 +71,36 @@ export default function Hero() {
         className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center bg-white/80 hover:bg-white transition-colors rounded-full shadow"
         aria-label="Next"
       >
-        <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <svg
+          width="16"
+          height="16"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
           <polyline points="9 18 15 12 9 6" />
         </svg>
       </button>
+
+      {/* Brand watermark */}
+      <div className="absolute bottom-3 right-3 z-10 pointer-events-none select-none">
+        <span
+          className="text-white/30 font-bold tracking-[0.35em] uppercase"
+          style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(12rem, 21vw, 14rem)",
+             fontWeight: 400,
+            letterSpacing: "-0.02em",
+            color: "#fff",
+            lineHeight: 1,
+            display: "block",
+            textShadow: "0 2px 40px rgba(0,0,0,0.18)",
+          }}
+        >
+          BRAND
+        </span>
+      </div>
 
       {/* Dot indicators */}
       <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
