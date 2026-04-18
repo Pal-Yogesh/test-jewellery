@@ -181,58 +181,101 @@ export default function Navbar() {
   return (
     <>
       {/* ── Fixed Header Bar ── */}
-      <header className="fixed top-0 left-0 right-0 z-500 bg-white border-b border-gray-100">
-        <div className="h-14 flex items-center justify-between px-4 sm:px-6">
-
+      <header className="z-500 ">
+        <div className=" flex items-center justify-between px-4 sm:px-6 fixed top-3 left-0 right-0 z-500 ">
           {/* Left — Hamburger */}
           <Hamburger open={isOpen} onClick={() => setIsOpen((v) => !v)} />
-
-          {/* Center — Brand */}
-          <a
-            href="/"
-            className="absolute left-1/2 -translate-x-1/2 text-gray-900 font-bold tracking-[0.3em] uppercase select-none hover:text-[#C8102E] transition-colors"
-            style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.25rem" }}
+        </div>
+        {/* Right — 4 actions */}
+        <div className="flex flex-col fixed right-2 top-5  gap-6 z-500">
+          <button
+            className="flex flex-col items-center gap-0.5 group"
+            aria-label="Search"
           >
-            BRAND
-          </a>
+            <svg
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              viewBox="0 0 24 24"
+              className="text-black group-hover:text-[#C8102E] transition-colors"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <span className="hidden sm:block text-[8px] tracking-[0.18em] uppercase text-black group-hover:text-[#C8102E] transition-colors font-medium">
+              Search
+            </span>
+          </button>
 
-          {/* Right — 4 actions */}
-          <div className="flex items-center gap-5 sm:gap-6">
-            <button className="flex flex-col items-center gap-0.5 group" aria-label="Search">
-              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.6" viewBox="0 0 24 24" className="text-gray-700 group-hover:text-[#C8102E] transition-colors">
-                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-              </svg>
-              <span className="hidden sm:block text-[8px] tracking-[0.18em] uppercase text-gray-500 group-hover:text-[#C8102E] transition-colors font-medium">Search</span>
-            </button>
+          <button
+            className="flex flex-col items-center gap-0.5 group relative"
+            aria-label="Shopping bag"
+          >
+            <svg
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              viewBox="0 0 24 24"
+              className="text-black group-hover:text-[#C8102E] transition-colors"
+            >
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 01-8 0" />
+            </svg>
+            <span className="hidden sm:block text-[8px] tracking-[0.18em] uppercase text-black group-hover:text-[#C8102E] transition-colors font-medium whitespace-nowrap">
+              Shopping <br /> Bag
+              {/* <span className="text-[#C8102E]">[0]</span> */}
+            </span>
+          </button>
 
-            <button className="flex flex-col items-center gap-0.5 group relative" aria-label="Shopping bag">
-              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.6" viewBox="0 0 24 24" className="text-gray-700 group-hover:text-[#C8102E] transition-colors">
-                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" /><line x1="3" y1="6" x2="21" y2="6" /><path d="M16 10a4 4 0 01-8 0" />
-              </svg>
-              <span className="hidden sm:block text-[8px] tracking-[0.18em] uppercase text-gray-500 group-hover:text-[#C8102E] transition-colors font-medium whitespace-nowrap">
-                Shopping Bag <span className="text-[#C8102E]">[0]</span>
-              </span>
-            </button>
+          <button
+            className="hidden sm:flex flex-col items-center gap-0.5 group"
+            aria-label="Log in"
+          >
+            <svg
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              viewBox="0 0 24 24"
+              className="text-black group-hover:text-[#C8102E] transition-colors"
+            >
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span className="text-[8px] tracking-[0.18em] uppercase text-black group-hover:text-[#C8102E] transition-colors font-medium">
+              Log In
+            </span>
+          </button>
 
-            <button className="hidden sm:flex flex-col items-center gap-0.5 group" aria-label="Log in">
-              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.6" viewBox="0 0 24 24" className="text-gray-700 group-hover:text-[#C8102E] transition-colors">
-                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" />
-              </svg>
-              <span className="text-[8px] tracking-[0.18em] uppercase text-gray-500 group-hover:text-[#C8102E] transition-colors font-medium">Log In</span>
-            </button>
-
-            <button className="hidden sm:flex flex-col items-center gap-0.5 group" aria-label="Help">
-              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.6" viewBox="0 0 24 24" className="text-gray-700 group-hover:text-[#C8102E] transition-colors">
-                <circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" />
-              </svg>
-              <span className="text-[8px] tracking-[0.18em] uppercase text-gray-500 group-hover:text-[#C8102E] transition-colors font-medium">Help</span>
-            </button>
-          </div>
+          <button
+            className="hidden sm:flex flex-col items-center gap-0.5 group"
+            aria-label="Help"
+          >
+            <svg
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              viewBox="0 0 24 24"
+              className="text-black group-hover:text-[#C8102E] transition-colors"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
+            <span className="text-[8px] tracking-[0.18em] uppercase text-black group-hover:text-[#C8102E] transition-colors font-medium">
+              Help
+            </span>
+          </button>
         </div>
       </header>
-
-      {/* Spacer so page content doesn't hide under fixed header */}
-      <div className="h-14" />
 
       <AnimatePresence>
         {isOpen && (
@@ -336,7 +379,7 @@ export default function Navbar() {
                                       link.href ??
                                       `/${cat.id}/${link.label.toLowerCase().replace(/\s+/g, "-")}`
                                     }
-                                    className="text-[0.82rem] text-gray-700 hover:text-[#C8102E] transition-colors duration-200 leading-snug relative group"
+                                    className="text-[0.82rem] text-black hover:text-[#C8102E] transition-colors duration-200 leading-snug relative group"
                                   >
                                     {link.label}
                                     <span className="absolute -bottom-px left-0 h-px w-0 bg-[#C8102E] group-hover:w-full transition-[width] duration-300" />
