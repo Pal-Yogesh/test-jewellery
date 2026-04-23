@@ -13,6 +13,7 @@ import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
+import NavArrow from "./NavArrow";
 import "./sponsored.css";
 
 // ─── Slide data ────────────────────────────────────────────────────────────
@@ -53,28 +54,7 @@ function pad(n: number) {
   return n < 10 ? `0${n}` : `${n}`;
 }
 
-const ArrowSvg = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 29.541 22.323">
-    <g transform="translate(0 1.014)">
-      <path
-        d="M115.445,20.633l9.311-10.148L115.445.338"
-        transform="translate(-97.25 -0.338)"
-        fill="none"
-        stroke="currentColor"
-        strokeMiterlimit={10}
-        strokeWidth={3}
-      />
-      <line
-        x1="27.506"
-        transform="translate(0 10.148)"
-        fill="none"
-        stroke="currentColor"
-        strokeMiterlimit={10}
-        strokeWidth={3}
-      />
-    </g>
-  </svg>
-);
+// ArrowSvg removed — using shared NavArrow component
 
 export default function SponsoredProduct() {
   const [bgSwiper, setBgSwiper] = useState<SwiperType | null>(null);
@@ -161,10 +141,10 @@ export default function SponsoredProduct() {
       <div className="sponsored-bottom">
         <div className="sponsored-nav">
           <button ref={prevRef} className="sponsored-btn is-prev" aria-label="Previous slide">
-            <ArrowSvg />
+            <NavArrow direction="left" />
           </button>
           <button ref={nextRef} className="sponsored-btn" aria-label="Next slide">
-            <ArrowSvg />
+            <NavArrow direction="right" />
           </button>
         </div>
 

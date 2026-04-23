@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import NavArrow from "./NavArrow";
 
 const SLIDES = [
   "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=1600&q=90",
@@ -9,7 +10,7 @@ const SLIDES = [
   "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1600&q=90",
 ];
 
-const DURATION = 4500;
+const DURATION = 2000;
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
@@ -52,35 +53,17 @@ export default function Hero() {
       {/* Prev / Next arrows */}
       <button
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center bg-white/80 hover:bg-white transition-colors rounded-full shadow"
+        className="absolute left-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 flex items-center justify-center bg-white/70 hover:bg-white text-gray-800 hover:text-[#C8102E] transition-all rounded-full backdrop-blur-sm border border-white/40"
         aria-label="Previous"
       >
-        <svg
-          width="16"
-          height="16"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
+        <NavArrow direction="left" />
       </button>
       <button
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center bg-white/80 hover:bg-white transition-colors rounded-full shadow"
+        className="absolute right-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 flex items-center justify-center bg-white/70 hover:bg-white text-gray-800 hover:text-[#C8102E] transition-all rounded-full backdrop-blur-sm border border-white/40"
         aria-label="Next"
       >
-        <svg
-          width="16"
-          height="16"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <polyline points="9 18 15 12 9 6" />
-        </svg>
+        <NavArrow direction="right" />
       </button>
 
       {/* Brand watermark */}

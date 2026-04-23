@@ -78,10 +78,11 @@
 .sponsored-titles .slider-title {
   color: transparent;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(4rem, 10vw, 10rem);
+  font-size: clamp(1rem, 10vw, 6rem);
   line-height: 0.85;
   letter-spacing: -0.04em;
   font-weight: 600;
+  margin-top: 40px;
   white-space: nowrap;
   cursor: default;
   -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.6);
@@ -131,11 +132,8 @@
   color: #fff;
 }
 .sponsored-btn svg {
-  width: 40%;
-  height: 40%;
-}
-.sponsored-btn.is-prev svg {
-  transform: rotate(180deg);
+  width: 60%;
+  height: 60%;
 }
 
 /* ── Counter ── */

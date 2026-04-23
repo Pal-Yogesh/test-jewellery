@@ -11,8 +11,8 @@ export default function Home() {
       <Hero />
       <GiftsBanner />
       <ShopSection />
-      <SponsoredProduct />
       <OurDesigners />
+      <SponsoredProduct />
       <TrustItemStrip />
     </>
   );
