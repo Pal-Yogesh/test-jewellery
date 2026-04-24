@@ -50,7 +50,7 @@ function ImageRow({
           >
             <img src={src} alt="" className="w-full h-full object-cover" />
             {/* Red tint */}
-            <div className="absolute inset-0 bg-[#C8102E]/45 mix-blend-multiply" />
+            <div className="absolute inset-0 bg-[#C46E6D]/45 mix-blend-multiply" />
             {/* Subtle inner shadow */}
             <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.15)]" />
           </div>
@@ -81,7 +81,7 @@ export default function GiftsBanner() {
     <>
      {/* Boxes of products */}
 
-      <div className="px-5 sm:px-8 lg:px-18  py-14">
+      {/* <div className="px-5 sm:px-8 lg:px-18  py-14">
         <div className="flex justify-center items-center gap-5">
           <div>
             <Image
@@ -124,10 +124,10 @@ export default function GiftsBanner() {
             <div className="uppercase text-center pt-3">bangles</div>
           </div>
         </div>
-      </div>
+      </div> */}
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden bg-red-950"
+      className="relative w-full overflow-hidden bg-[#C46E6D]"
       style={{
         height: "clamp(320px, 40vw, 450px)",
         fontFamily: "'Cormorant Garamond', serif",
@@ -149,7 +149,7 @@ export default function GiftsBanner() {
       </div>
 
       {/* Red overlay for cohesion */}
-      <div className="absolute inset-0 bg-red-950/25" />
+      <div className="absolute inset-0 bg-[#C46E6D]/25" />
 
       {/* Left fade for text readability */}
       <div

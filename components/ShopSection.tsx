@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import SponsoredProduct from "./SponsoredProduct";
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 interface Product {
@@ -80,64 +81,64 @@ const SECTIONS: Section[] = [
       },
     ],
   },
-  {
-    id: "bridal-edit",
-    heading: "Bridal Edit",
-    subheading: "Timeless sets for your forever moment",
-    filters: ["Under ₹5K", "Under ₹10K", "Under ₹20K"],
-    products: [
-      {
-        id: 6,
-        brand: "BRAND",
-        name: "Jadau Bridal Necklace",
-        price: "₹ 8,500",
-        images: [
-          "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-          "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600&q=80",
-        ],
-      },
-      {
-        id: 7,
-        brand: "BRAND",
-        name: "Kundan Maang Tikka",
-        price: "₹ 4,200",
-        images: [
-          "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600&q=80",
-          "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
-        ],
-      },
-      {
-        id: 8,
-        brand: "BRAND",
-        name: "Polki Chandbali Set",
-        price: "₹ 12,000",
-        images: [
-          "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=600&q=80",
-          "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80",
-        ],
-      },
-      {
-        id: 9,
-        brand: "BRAND",
-        name: "Temple Bangles Pair",
-        price: "₹ 6,800",
-        images: [
-          "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-          "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80",
-        ],
-      },
-      {
-        id: 10,
-        brand: "BRAND",
-        name: "Meenakari Haath Phool",
-        price: "₹ 5,500",
-        images: [
-          "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-          "https://images.unsplash.com/photo-1573408301185-9519f94816b4?w=600&q=80",
-        ],
-      },
-    ],
-  },
+  // {
+  //   id: "bridal-edit",
+  //   heading: "Bridal Edit",
+  //   subheading: "Timeless sets for your forever moment",
+  //   filters: ["Under ₹5K", "Under ₹10K", "Under ₹20K"],
+  //   products: [
+  //     {
+  //       id: 6,
+  //       brand: "BRAND",
+  //       name: "Jadau Bridal Necklace",
+  //       price: "₹ 8,500",
+  //       images: [
+  //         "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+  //         "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600&q=80",
+  //       ],
+  //     },
+  //     {
+  //       id: 7,
+  //       brand: "BRAND",
+  //       name: "Kundan Maang Tikka",
+  //       price: "₹ 4,200",
+  //       images: [
+  //         "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600&q=80",
+  //         "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
+  //       ],
+  //     },
+  //     {
+  //       id: 8,
+  //       brand: "BRAND",
+  //       name: "Polki Chandbali Set",
+  //       price: "₹ 12,000",
+  //       images: [
+  //         "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=600&q=80",
+  //         "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80",
+  //       ],
+  //     },
+  //     {
+  //       id: 9,
+  //       brand: "BRAND",
+  //       name: "Temple Bangles Pair",
+  //       price: "₹ 6,800",
+  //       images: [
+  //         "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+  //         "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80",
+  //       ],
+  //     },
+  //     {
+  //       id: 10,
+  //       brand: "BRAND",
+  //       name: "Meenakari Haath Phool",
+  //       price: "₹ 5,500",
+  //       images: [
+  //         "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+  //         "https://images.unsplash.com/photo-1573408301185-9519f94816b4?w=600&q=80",
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     id: "festive",
     heading: "Our Brand",
@@ -380,12 +381,15 @@ function SectionCard({ section }: { section: Section }) {
 
 // ─── Main Export ───────────────────────────────────────────────────────────
 export default function ShopSection() {
+  const newArrivals = SECTIONS.find((s) => s.id === "new-arrivals");
+  const ourBrand = SECTIONS.find((s) => s.id === "festive");
+
   return (
     <section className="bg-[#fafafa] py-10 px-4 sm:px-6 lg:px-18">
-      <div className=" flex flex-col gap-6">
-        {SECTIONS.map((section, i) => (
-          <SectionCard key={section.id} section={section} />
-        ))}
+      <div className="flex flex-col gap-6">
+        {newArrivals && <SectionCard section={newArrivals} />}
+        <SponsoredProduct />
+        {ourBrand && <SectionCard section={ourBrand} />}
       </div>
     </section>
   );

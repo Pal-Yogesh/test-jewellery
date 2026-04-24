@@ -73,7 +73,7 @@ export default function SponsoredProduct() {
   }, [bgSwiper, titlesSwiper, thumbsSwiper]);
 
   return (
-    <section className="sponsored-slider">
+    <section className="sponsored-slider rounded-3xl my-7">
       {/* Heading */}
       <div className="sponsored-heading">
         <span className="sponsored-heading__eyebrow">
