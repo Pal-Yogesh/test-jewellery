@@ -3,7 +3,7 @@
   position: relative;
   display: flex;
   width: 100%;
-  min-height: 100vh;
+  min-height: 85vh;
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;

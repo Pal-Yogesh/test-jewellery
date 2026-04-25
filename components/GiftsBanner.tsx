@@ -156,7 +156,7 @@ export default function GiftsBanner() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(105deg, #C8102E 0%, #C8102E 42%, rgba(200,16,46,0.7) 50%, rgba(200,16,46,0.2) 60%, transparent 80%)",
+            "linear-gradient(105deg, #C46E6D 0%, #C46E6D 42%, transparent 80%)",
         }}
       />
 

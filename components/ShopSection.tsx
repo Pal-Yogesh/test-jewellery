@@ -35,7 +35,7 @@ const SECTIONS: Section[] = [
         name: "Paprika Summer Choker",
         price: "₹ 3,000",
         images: [
-          "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
+          "https://i.pinimg.com/736x/22/fc/78/22fc78750310a51d4ae02a485449f39a.jpg",
           "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600&q=80",
         ],
       },
@@ -45,7 +45,7 @@ const SECTIONS: Section[] = [
         name: "Basra Link Hairband",
         price: "₹ 3,000",
         images: [
-          "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80",
+          "https://i.pinimg.com/736x/49/1c/6f/491c6fef18ffb1e117baa2216bfdc293.jpg",
           "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=600&q=80",
         ],
       },
@@ -55,7 +55,7 @@ const SECTIONS: Section[] = [
         name: "Darpan Meen Hairpins",
         price: "₹ 2,500",
         images: [
-          "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80",
+          "https://i.pinimg.com/1200x/c8/93/51/c89351439a0a251b70a95c6f04087fd8.jpg",
           "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
         ],
       },
@@ -65,7 +65,7 @@ const SECTIONS: Section[] = [
         name: "Solomon Pendant",
         price: "₹ 3,000",
         images: [
-          "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600&q=80",
+          "https://i.pinimg.com/1200x/57/93/22/57932288f2c24e6aaa9400fc99b3a120.jpg",
           "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
         ],
       },
@@ -265,7 +265,7 @@ function SectionCard({ section }: { section: Section }) {
   };
 
   return (
-    <div className=" overflow-hidden">
+    <div className=" overflow-hidden px-4 sm:px-6 lg:px-18">
       {/* Card header */}
       <div className="px-3 pt-8 pb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-gray-100">
         <div>
@@ -385,7 +385,7 @@ export default function ShopSection() {
   const ourBrand = SECTIONS.find((s) => s.id === "festive");
 
   return (
-    <section className="bg-[#fafafa] py-10 px-4 sm:px-6 lg:px-18">
+    <section className="bg-[#fafafa] py-10 ">
       <div className="flex flex-col gap-6">
         {newArrivals && <SectionCard section={newArrivals} />}
         <SponsoredProduct />

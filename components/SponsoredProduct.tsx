@@ -20,28 +20,28 @@ import "./sponsored.css";
 const SLIDES = [
   {
     title: "Kundan",
-    image: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=400&q=80",
+    image: "https://i.pinimg.com/1200x/5e/95/cb/5e95cbf6c0c65e6e26860a11ac6f71f2.jpg",
+    thumb: "https://i.pinimg.com/1200x/5e/95/cb/5e95cbf6c0c65e6e26860a11ac6f71f2.jpg",
   },
   {
     title: "Jadau",
-    image: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=400&q=80",
+    image: "https://i.pinimg.com/736x/c3/ec/c1/c3ecc13eebe1d3cec5ba135e64809eb3.jpg",
+    thumb: "https://i.pinimg.com/736x/c3/ec/c1/c3ecc13eebe1d3cec5ba135e64809eb3.jpg",
   },
   {
     title: "Meenakari",
-    image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=400&q=80",
+    image: "https://i.pinimg.com/1200x/a7/10/9b/a7109b9b8470345f0655c1e9dcddb462.jpg",
+    thumb: "https://i.pinimg.com/1200x/a7/10/9b/a7109b9b8470345f0655c1e9dcddb462.jpg",
   },
   {
     title: "Filigree",
-    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&q=80",
+    image: "https://i.pinimg.com/1200x/18/02/6f/18026fc55d58b1d411775ba178343d10.jpg",
+    thumb: "https://i.pinimg.com/1200x/18/02/6f/18026fc55d58b1d411775ba178343d10.jpg",
   },
   {
     title: "Temple",
-    image: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=400&q=80",
+    image: "https://i.pinimg.com/1200x/08/a4/13/08a413802e631f9da67ca43c94a7eeb2.jpg",
+    thumb: "https://i.pinimg.com/1200x/08/a4/13/08a413802e631f9da67ca43c94a7eeb2.jpg",
   },
   {
     title: "Polki",
