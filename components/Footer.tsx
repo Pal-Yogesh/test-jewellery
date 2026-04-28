@@ -11,34 +11,7 @@ export default function Footer() {
 
   
       <div className="relative z-10">
-        {/* Newsletter */}
-        <motion.div
-          className="border-b border-stone-800 py-16 lg:py-20"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-serif mb-6">
-              Stay Connected
-            </h3>
-            <p className="text-lg sm:text-xl text-stone-300 font-light mb-8 max-w-2xl mx-auto">
-              Be the first to discover our latest collections, exclusive events, and jewellery insights.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="  Enter your email address"
-                className="bg-stone-800 border-stone-700 text-white py-2 placeholder:text-stone-400 flex-1"
-              />
-              <button className="bg-amber-500 flex items-center py-2 text-stone-900 hover:bg-amber-400 px-8">
-                Subscribe
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </button>
-            </div>
-          </div>
-        </motion.div>
+       
 
         {/* Main Footer Content */}
         <div className="py-16 lg:py-20">
@@ -144,8 +117,7 @@ export default function Footer() {
                     <div>
                       <p className="text-stone-300 font-light text-sm">Brand Studio</p>
                       <p className="text-stone-400 font-light text-sm">
-                        42, Linking Road, Bandra West,
-                        Mumbai 400050, India
+                        India
                       </p>
                     </div>
                   </div>
@@ -159,12 +131,7 @@ export default function Footer() {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-stone-800">
-                  <p className="text-stone-400 font-light text-sm mb-2">Also visit us at:</p>
-                  <p className="text-stone-300 font-light text-sm">
-                    DLF Emporio, Vasant Kunj, New Delhi
-                  </p>
-                </div>
+               
               </motion.div>
             </div>
           </div>

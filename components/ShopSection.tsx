@@ -141,7 +141,7 @@ const SECTIONS: Section[] = [
   // },
   {
     id: "festive",
-    heading: "Our Brand",
+    heading: "Our Designers",
     subheading: "Bold, joyful, unapologetically magnificent",
     filters: ["Under ₹3K", "Under ₹5K", "Under ₹10K"],
     products: [
