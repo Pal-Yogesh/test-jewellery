@@ -1,7 +1,12 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, EffectCreative } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
+
+import "swiper/css";
+import "swiper/css/effect-creative";
 
 const SLIDES = [
   "https://i.pinimg.com/1200x/97/20/44/972044bcd12b64b342d532f6a11b6666.jpg",
@@ -11,56 +16,52 @@ const SLIDES = [
   "https://i.pinimg.com/1200x/c0/33/17/c0331726c851e1f48385441204108e17.jpg",
 ];
 
-const DURATION = 4500;
-
 export default function Hero() {
-  const [current, setCurrent] = useState(0);
-  const [paused, setPaused] = useState(false);
-
-  const next = useCallback(() => setCurrent((c) => (c + 1) % SLIDES.length), []);
-  const prev = useCallback(() => setCurrent((c) => (c - 1 + SLIDES.length) % SLIDES.length), []);
-
-  useEffect(() => {
-    if (paused) return;
-    const id = setTimeout(next, DURATION);
-    return () => clearTimeout(id);
-  }, [current, paused, next]);
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section
-      className="relative w-full overflow-hidden"
-      style={{ height: "100vh" }}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-    >
-      {/* Slides */}
-      <AnimatePresence initial={false}>
-        <motion.img
-          key={current}
-          src={SLIDES[current]}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-          initial={{ opacity: 0, scale: 1.06 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 1.02 }}
-          transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] as const }}
-          draggable={false}
-        />
-      </AnimatePresence>
+    <section className="relative w-full h-screen overflow-hidden">
+      <Swiper
+        modules={[Autoplay, Navigation, EffectCreative]}
+        effect="creative"
+        creativeEffect={{
+          prev: { translate: ["-100%", 0, 0] },
+          next: { translate: ["100%", 0, 0] },
+        }}
+        speed={800}
+        autoplay={{ delay: 4500, disableOnInteraction: false }}
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        onBeforeInit={(swiper: SwiperType) => {
+          if (swiper.params.navigation && typeof swiper.params.navigation !== "boolean") {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+          }
+        }}
+        onSlideChange={(s) => setActiveIndex(s.realIndex)}
+        className="w-full h-full"
+      >
+        {SLIDES.map((src, i) => (
+          <SwiperSlide key={i}>
+            <img
+              src={src}
+              alt=""
+              className="w-full h-full object-cover"
+              draggable={false}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-      {/* BRAND logo — absolute inside hero, never leaks outside */}
-      <div className="absolute bottom-6 right-6 z-20 pointer-events-none select-none">
+      {/* BRAND logo — responsive with Tailwind, clipped inside hero */}
+      <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 pointer-events-none select-none">
         <span
-          style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(10rem, 20vw, 14rem)",
-            fontWeight: 400,
-            letterSpacing: "-0.02em",
-            color: "#fff",
-            lineHeight: 1,
-            display: "block",
-            textShadow: "0 2px 40px rgba(0,0,0,0.18)",
-          }}
+          className="block text-white font-normal leading-none tracking-tight drop-shadow-[0_2px_40px_rgba(0,0,0,0.18)] text-[5rem] sm:text-[10rem] md:text-[13rem] lg:text-[16rem]"
+          style={{ fontFamily: "'Cormorant Garamond', serif" }}
         >
           BRAND
         </span>
@@ -68,7 +69,7 @@ export default function Hero() {
 
       {/* Arrow buttons */}
       <button
-        onClick={prev}
+        ref={prevRef}
         className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#C8102E] hover:bg-[#a00d24] flex items-center justify-center transition-colors duration-200 shadow-lg"
         aria-label="Previous"
       >
@@ -77,7 +78,7 @@ export default function Hero() {
         </svg>
       </button>
       <button
-        onClick={next}
+        ref={nextRef}
         className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#C8102E] hover:bg-[#a00d24] flex items-center justify-center transition-colors duration-200 shadow-lg"
         aria-label="Next"
       >
@@ -86,30 +87,18 @@ export default function Hero() {
         </svg>
       </button>
 
-      {/* Progress dots */}
+      {/* Slide indicators */}
       <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
         {SLIDES.map((_, i) => (
-          <button
+          <span
             key={i}
-            onClick={() => setCurrent(i)}
-            aria-label={`Slide ${i + 1}`}
-            className="relative overflow-hidden rounded-full transition-all duration-500"
+            className="block rounded-full transition-all duration-500"
             style={{
-              width: i === current ? 28 : 8,
+              width: i === activeIndex ? 24 : 6,
               height: 4,
-              background: i === current ? "rgba(255,255,255,0.3)" : "rgba(255,255,255,0.4)",
+              background: i === activeIndex ? "#fff" : "rgba(255,255,255,0.4)",
             }}
-          >
-            {i === current && (
-              <motion.span
-                key={`progress-${current}`}
-                className="absolute inset-0 rounded-full bg-white"
-                initial={{ scaleX: 0, transformOrigin: "left" }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: DURATION / 1000, ease: "linear" }}
-              />
-            )}
-          </button>
+          />
         ))}
       </div>
     </section>
