@@ -187,12 +187,12 @@ export default function Navbar() {
           <Hamburger open={isOpen} onClick={() => setIsOpen((v) => !v)} />
         </div>
         {/* Right — 4 actions */}
-        <div className="flex flex-col fixed right-0 top-0 py-5 px-2 gap-6 z-500">
+        <div className="flex flex-col fixed right-0 top-3 py-5 px-2 gap-6 z-500">
           <button
             className="flex flex-col items-center gap-0.5 group"
             aria-label="Search"
           >
-            <svg
+            {/* <svg
               width="18"
               height="18"
               fill="none"
@@ -203,8 +203,8 @@ export default function Navbar() {
             >
               <circle cx="11" cy="11" r="8" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-            <span className="hidden sm:block text-[9px] tracking-[0.12em] uppercase text-black group-hover:text-[#C8102E] transition-colors font-medium"
+            </svg> */}
+            <span className="hidden sm:block text-[10px] tracking-[0.12em] uppercase text-black group-hover:text-[#C8102E] transition-colors font-medium"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               Search
             </span>
@@ -214,7 +214,7 @@ export default function Navbar() {
             className="flex flex-col items-center gap-0.5 group relative"
             aria-label="Shopping bag"
           >
-            <svg
+            {/* <svg
               width="18"
               height="18"
               fill="none"
@@ -226,8 +226,8 @@ export default function Navbar() {
               <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
               <line x1="3" y1="6" x2="21" y2="6" />
               <path d="M16 10a4 4 0 01-8 0" />
-            </svg>
-            <span className="hidden sm:block text-[9px] tracking-[0.12em] uppercase text-black group-hover:text-[#C8102E] transition-colors font-medium whitespace-nowrap"
+            </svg> */}
+            <span className="hidden sm:block text-[10px] tracking-[0.12em] uppercase text-black group-hover:text-[#C8102E] transition-colors font-medium whitespace-nowrap"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               Shopping <br /> Bag
               {/* <span className="text-[#C8102E]">[0]</span> */}
@@ -238,7 +238,7 @@ export default function Navbar() {
             className="hidden sm:flex flex-col items-center gap-0.5 group"
             aria-label="Log in"
           >
-            <svg
+            {/* <svg
               width="18"
               height="18"
               fill="none"
@@ -249,8 +249,8 @@ export default function Navbar() {
             >
               <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
               <circle cx="12" cy="7" r="4" />
-            </svg>
-            <span className="text-[9px] tracking-[0.12em] uppercase text-black group-hover:text-[#C8102E] transition-colors font-medium"
+            </svg> */}
+            <span className="text-[10px] tracking-[0.12em] uppercase text-black group-hover:text-[#C8102E] transition-colors font-medium"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               Log In
             </span>
@@ -260,7 +260,7 @@ export default function Navbar() {
             className="hidden sm:flex flex-col items-center gap-0.5 group"
             aria-label="Help"
           >
-            <svg
+            {/* <svg
               width="18"
               height="18"
               fill="none"
@@ -272,8 +272,8 @@ export default function Navbar() {
               <circle cx="12" cy="12" r="10" />
               <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" />
               <line x1="12" y1="17" x2="12.01" y2="17" />
-            </svg>
-            <span className="text-[9px] tracking-[0.12em] uppercase text-black group-hover:text-[#C8102E] transition-colors font-medium"
+            </svg> */}
+            <span className="text-[10px] tracking-[0.12em] uppercase text-black group-hover:text-[#C8102E] transition-colors font-medium"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               Help
             </span>
