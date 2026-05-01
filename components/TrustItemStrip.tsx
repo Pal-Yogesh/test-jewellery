@@ -98,7 +98,7 @@ export default function TrustItemStrip() {
      
        {/* ── BRAND PROMISE BANNER ── */}
       
-            <section className="relative overflow-hidden bg-white border-b border-gray-100 py-20">
+            <section className="relative overflow-hidden bg-[#F5F0EB] border-b border-gray-100 py-20">
               <div className="absolute left-[6%] top-8 w-px h-20 bg-gradient-to-b from-transparent via-gray-200 to-transparent" />
               <div className="absolute right-[6%] bottom-8 w-px h-20 bg-gradient-to-b from-transparent via-gray-200 to-transparent" />
               <div className="max-w-3xl mx-auto px-6 text-center">
@@ -107,11 +107,11 @@ export default function TrustItemStrip() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="text-[11px] tracking-[.28em] uppercase text-[#C8102E] font-semibold flex items-center justify-center gap-3 mb-5"
+                  className="text-[11px] tracking-[.28em] uppercase text-[#C46E6D] font-semibold flex items-center justify-center gap-3 mb-5"
                 >
-                  <span className="w-8 h-px bg-[#C8102E]" />
+                  <span className="w-8 h-px bg-[#C46E6D]" />
                   Our Promise
-                  <span className="w-8 h-px bg-[#C8102E]" />
+                  <span className="w-8 h-px bg-[#C46E6D]" />
                 </motion.span>
                 <motion.h2
                   initial={{ opacity: 0, y: 30 }}
@@ -125,7 +125,7 @@ export default function TrustItemStrip() {
                   }}
                 >
                   Made by Hand,{" "}
-                  <em className="italic text-[#C8102E]">Felt by Heart</em>
+                  <em className="italic text-[#C46E6D]">Felt by Heart</em>
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -151,13 +151,13 @@ export default function TrustItemStrip() {
                 >
                   <a
                     href="/about"
-                    className="bg-[#C8102E] hover:bg-[#a00d24] text-white text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm transition-colors"
+                    className="bg-[#C46E6D] hover:bg-[#A85857] text-white text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm transition-colors"
                   >
                     Our Story
                   </a>
                   <a
                     href="/designers"
-                    className="border border-gray-300 hover:border-[#C8102E] text-gray-600 hover:text-[#C8102E] text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm transition-all"
+                    className="border border-gray-300 hover:border-[#C46E6D] text-gray-600 hover:text-[#C46E6D] text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm transition-all"
                   >
                     Meet Designers
                   </a>
@@ -165,7 +165,7 @@ export default function TrustItemStrip() {
               </div>
             </section>
       {/* ── Trust Icons ── */}
-      <div ref={ref} className="bg-[#fafafa] border-y border-gray-100 py-10">
+      <div ref={ref} className="bg-[#F5F0EB] border-y border-gray-100 py-10">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {TRUST_ITEMS.map((item, i) => (
@@ -176,7 +176,7 @@ export default function TrustItemStrip() {
                 transition={{ duration: 0.55, delay: i * 0.1 }}
                 className="flex flex-col items-center text-center gap-3 group"
               >
-                <div className="w-14 h-14 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-[#C8102E] group-hover:text-[#C8102E] transition-all duration-300">
+                <div className="w-14 h-14 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-[#C46E6D] group-hover:text-[#C46E6D] transition-all duration-300">
                   {item.icon}
                 </div>
                 <div>
@@ -194,7 +194,7 @@ export default function TrustItemStrip() {
       </div>
 
       {/* ── Marquee ── */}
-      <div className="overflow-hidden border-b border-gray-100 py-3.5 bg-white">
+      <div className="overflow-hidden border-b border-gray-100 py-3.5 bg-[#F5F0EB]">
         <motion.div
           className="flex gap-10 whitespace-nowrap"
           animate={{ x: ["0%", "-50%"] }}
@@ -205,7 +205,7 @@ export default function TrustItemStrip() {
               <span className="text-[11px] tracking-[.2em] uppercase text-gray-400 font-medium">
                 {tag}
               </span>
-              <span className="text-[#C8102E] text-xs">✦</span>
+              <span className="text-[#D4A843] text-xs">✦</span>
             </span>
           ))}
         </motion.div>

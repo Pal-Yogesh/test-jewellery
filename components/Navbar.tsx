@@ -204,7 +204,7 @@ export default function Navbar() {
               <circle cx="11" cy="11" r="8" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg> */}
-            <span className="hidden sm:block text-[10px] tracking-[0.12em] uppercase text-black group-hover:text-[#C8102E] transition-colors font-medium"
+            <span className="hidden sm:block text-[10px] tracking-[0.12em] uppercase text-black group-hover:text-[#C46E6D] transition-colors font-medium"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               Search
             </span>
@@ -227,7 +227,7 @@ export default function Navbar() {
               <line x1="3" y1="6" x2="21" y2="6" />
               <path d="M16 10a4 4 0 01-8 0" />
             </svg> */}
-            <span className="hidden sm:block text-[10px] tracking-[0.12em] uppercase text-black group-hover:text-[#C8102E] transition-colors font-medium whitespace-nowrap"
+            <span className="hidden sm:block text-[10px] tracking-[0.12em] uppercase text-black group-hover:text-[#C46E6D] transition-colors font-medium whitespace-nowrap"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               Shopping <br /> Bag
               {/* <span className="text-[#C8102E]">[0]</span> */}
@@ -250,7 +250,7 @@ export default function Navbar() {
               <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
               <circle cx="12" cy="7" r="4" />
             </svg> */}
-            <span className="text-[10px] tracking-[0.12em] uppercase text-black group-hover:text-[#C8102E] transition-colors font-medium"
+            <span className="text-[10px] tracking-[0.12em] uppercase text-black group-hover:text-[#C46E6D] transition-colors font-medium"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               Log In
             </span>
@@ -273,7 +273,7 @@ export default function Navbar() {
               <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" />
               <line x1="12" y1="17" x2="12.01" y2="17" />
             </svg> */}
-            <span className="text-[10px] tracking-[0.12em] uppercase text-black group-hover:text-[#C8102E] transition-colors font-medium"
+            <span className="text-[10px] tracking-[0.12em] uppercase text-black group-hover:text-[#C46E6D] transition-colors font-medium"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               Help
             </span>
@@ -383,13 +383,13 @@ export default function Navbar() {
                                       link.href ??
                                       `/${cat.id}/${link.label.toLowerCase().replace(/\s+/g, "-")}`
                                     }
-                                    className="text-[0.82rem] text-black hover:text-[#C8102E] transition-colors duration-200 leading-snug relative group"
+                                    className="text-[0.82rem] text-black hover:text-[#C46E6D] transition-colors duration-200 leading-snug relative group"
                                   >
                                     {link.label}
-                                    <span className="absolute -bottom-px left-0 h-px w-0 bg-[#C8102E] group-hover:w-full transition-[width] duration-300" />
+                                    <span className="absolute -bottom-px left-0 h-px w-0 bg-[#C46E6D] group-hover:w-full transition-[width] duration-300" />
                                   </a>
                                   {link.badge && (
-                                    <span className="text-[8px] font-bold tracking-[0.15em] text-[#C8102E] uppercase leading-none">
+                                    <span className="text-[8px] font-bold tracking-[0.15em] text-[#C46E6D] uppercase leading-none">
                                       {link.badge}
                                     </span>
                                   )}
@@ -431,7 +431,7 @@ export default function Navbar() {
                       <a
                         key={s}
                         href="#"
-                        className="text-[10px] tracking-[0.2em] uppercase text-gray-400 hover:text-[#C8102E] transition-colors"
+                        className="text-[10px] tracking-[0.2em] uppercase text-gray-400 hover:text-[#C46E6D] transition-colors"
                       >
                         {s}
                       </a>

@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
-  background-color: #2C1215;
+  background-color: #2D1215;
   overflow: hidden;
 }
 
@@ -25,8 +25,8 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(44, 18, 21, 0.3) 0%,
-    rgba(44, 18, 21, 0.6) 100%
+    rgba(45, 18, 21, 0.3) 0%,
+    rgba(45, 18, 21, 0.6) 100%
   );
   z-index: 1;
 }
@@ -128,7 +128,7 @@
   cursor: pointer;
 }
 .sponsored-btn:hover {
-  background-color: #C8102E;
+  background-color: #C46E6D;
   color: #fff;
 }
 .sponsored-btn svg {
@@ -145,7 +145,7 @@
   color: rgba(255, 255, 255, 0.6);
 }
 .sponsored-counter .current {
-  color: #C8102E;
+  color: #C46E6D;
   font-weight: 700;
 }
 
@@ -216,14 +216,14 @@
   font-size: 0.7rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #C8102E;
+  color: #C46E6D;
   font-weight: 600;
 }
 .sponsored-heading__line {
   display: inline-block;
   width: 2rem;
   height: 1px;
-  background: #C8102E;
+  background: #C46E6D;
 }
 .sponsored-heading__title {
   font-family: "Cormorant Garamond", serif;
@@ -235,7 +235,7 @@
 }
 .sponsored-heading__title em {
   font-style: italic;
-  color: #C8102E;
+  color: #C46E6D;
 }
 .sponsored-heading__sub {
   font-family: "Cormorant Garamond", serif;

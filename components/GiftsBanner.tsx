@@ -11,7 +11,7 @@ export default function GiftsBanner() {
 
   return (
     <section ref={ref} className="px-4 sm:px-6 lg:px-10 py-6">
-      <div className="relative overflow-hidden rounded-2xl bg-[#1a1210] min-h-[420px] sm:min-h-[480px]">
+      <div className="relative overflow-hidden rounded-2xl bg-[#2D1215] min-h-[420px] sm:min-h-[480px]">
 
         {/* Background image — right side on desktop, full on mobile */}
         <div className="absolute inset-0">
@@ -21,7 +21,7 @@ export default function GiftsBanner() {
             className="w-full h-full object-cover opacity-60"
           />
           {/* Gradient to make text readable */}
-          <div className="absolute inset-0 bg-linear-to-r from-[#1a1210] via-[#1a1210]/85 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-[#2D1215] via-[#2D1215]/85 to-transparent" />
         </div>
 
         {/* Sponsored tag */}
@@ -44,7 +44,7 @@ export default function GiftsBanner() {
             initial={{ opacity: 0, y: 12 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, ease, delay: 0.15 }}
-            className="text-[10px] tracking-[0.28em] uppercase text-[#C8102E] font-semibold mb-3"
+            className="text-[10px] tracking-[0.28em] uppercase text-[#C46E6D] font-semibold mb-3"
           >
             Amer Jewels
           </motion.p>
@@ -58,7 +58,7 @@ export default function GiftsBanner() {
             style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
           >
             Jewellery That Tells{" "}
-            <em className="italic text-[#C8102E]">Your Story</em>
+            <em className="italic text-[#C46E6D]">Your Story</em>
           </motion.h2>
 
           {/* Body */}
@@ -81,7 +81,7 @@ export default function GiftsBanner() {
           >
             <a
               href="/collections/amer-jewels"
-              className="bg-[#C8102E] hover:bg-[#a00d24] text-white text-[10px] tracking-[0.2em] uppercase font-bold px-7 py-3 rounded-full transition-colors inline-flex items-center gap-2"
+              className="bg-[#C46E6D] hover:bg-[#A85857] text-white text-[10px] tracking-[0.2em] uppercase font-bold px-7 py-3 rounded-full transition-colors inline-flex items-center gap-2"
             >
               Shop Now
               <svg width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">

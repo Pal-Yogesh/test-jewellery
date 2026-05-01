@@ -84,7 +84,7 @@ function ScrollStrip({
       style={{ transform: `rotate(${direction === "left" ? -3 : 3}deg)` }}
     >
       <div
-        className={`py-3 sm:py-4 ${isPrimary ? "bg-[#C8102E]" : "bg-gray-200"}`}
+        className={`py-3 sm:py-4 ${isPrimary ? "bg-[#C46E6D]" : "bg-gray-200"}`}
       >
         <div
           ref={innerRef}
@@ -152,11 +152,11 @@ export default function MakersCollective() {
           initial={{ opacity: 0, y: 10 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-[11px] tracking-[.25em] uppercase text-[#C8102E] font-semibold mb-4 flex items-center justify-center gap-2"
+          className="text-[11px] tracking-[.25em] uppercase text-[#C46E6D] font-semibold mb-4 flex items-center justify-center gap-2"
         >
-          <span className="w-6 h-px bg-[#C8102E] inline-block" />
+          <span className="w-6 h-px bg-[#C46E6D] inline-block" />
           Meet the Artisans
-          <span className="w-6 h-px bg-[#C8102E] inline-block" />
+          <span className="w-6 h-px bg-[#C46E6D] inline-block" />
         </motion.span>
 
         <motion.h2
@@ -170,7 +170,7 @@ export default function MakersCollective() {
           }}
         >
           Our{" "}
-          <em className="text-[#C8102E]" style={{ fontStyle: "italic" }}>
+          <em className="text-[#C46E6D]" style={{ fontStyle: "italic" }}>
             Makers
           </em>{" "}
           Collective
@@ -192,7 +192,7 @@ export default function MakersCollective() {
       >
         <a
           href="/designers"
-          className="inline-flex items-center gap-2 bg-[#C8102E] hover:bg-[#a00d24] text-white text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm transition-colors"
+          className="inline-flex items-center gap-2 bg-[#C46E6D] hover:bg-[#A85857] text-white text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm transition-colors"
         >
           Meet All Designers
           <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">

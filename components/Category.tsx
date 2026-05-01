@@ -23,7 +23,7 @@ export default function Category() {
               />
             </div>
             <p
-              className="mt-3 text-center text-sm tracking-[0.15em] uppercase text-gray-800 group-hover:text-[#C8102E] transition-colors duration-200 font-medium"
+              className="mt-3 text-center text-sm tracking-[0.15em] uppercase text-gray-800 group-hover:text-[#C46E6D] transition-colors duration-200 font-medium"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               {cat.label}

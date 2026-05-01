@@ -70,7 +70,7 @@ export default function Hero() {
       {/* Arrow buttons */}
       <button
         ref={prevRef}
-        className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#C8102E] hover:bg-[#a00d24] flex items-center justify-center transition-colors duration-200 shadow-lg"
+        className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#C46E6D] hover:bg-[#A85857] flex items-center justify-center transition-colors duration-200 shadow-lg"
         aria-label="Previous"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
@@ -79,7 +79,7 @@ export default function Hero() {
       </button>
       <button
         ref={nextRef}
-        className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#C8102E] hover:bg-[#a00d24] flex items-center justify-center transition-colors duration-200 shadow-lg"
+        className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#C46E6D] hover:bg-[#A85857] flex items-center justify-center transition-colors duration-200 shadow-lg"
         aria-label="Next"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">

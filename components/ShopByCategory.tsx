@@ -141,11 +141,11 @@ const SectionHeader = ({
         initial={{ opacity: 0, y: 10 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
-        className="text-[11px] tracking-[.25em] uppercase text-[#C8102E] font-semibold mb-3 flex items-center gap-2"
+        className="text-[11px] tracking-[.25em] uppercase text-[#C46E6D] font-semibold mb-3 flex items-center gap-2"
       >
-        <span className="w-6 h-px bg-[#C8102E] inline-block" />
+        <span className="w-6 h-px bg-[#C46E6D] inline-block" />
         {eyebrow}
-        <span className="w-6 h-px bg-[#C8102E] inline-block" />
+        <span className="w-6 h-px bg-[#C46E6D] inline-block" />
       </motion.span>
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
@@ -155,7 +155,7 @@ const SectionHeader = ({
         style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2rem, 4vw, 3rem)" }}
       >
         {title}{" "}
-        {titleItalic && <em className="text-[#C8102E]" style={{ fontStyle: "italic" }}>{titleItalic}</em>}
+        {titleItalic && <em className="text-[#C46E6D]" style={{ fontStyle: "italic" }}>{titleItalic}</em>}
       </motion.h2>
     </div>
   );
@@ -167,7 +167,7 @@ const TrustStrip = () => {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <div ref={ref} className="bg-[#fafafa] border-y border-gray-100 py-10">
+    <div ref={ref} className="bg-[#F5F0EB] border-y border-gray-100 py-10">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {icons.map((item, i) => (
@@ -178,7 +178,7 @@ const TrustStrip = () => {
               transition={{ duration: 0.55, delay: i * 0.1 }}
               className="flex flex-col items-center text-center gap-3 group"
             >
-              <div className="w-14 h-14 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-[#C8102E] group-hover:text-[#C8102E] transition-all duration-300">
+              <div className="w-14 h-14 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-[#C46E6D] group-hover:text-[#C46E6D] transition-all duration-300">
                 {item.icon}
               </div>
               <div>
@@ -223,12 +223,12 @@ const CategoryCard = ({ cat, index }: { cat: Category; index: number }) => {
       />
       <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
       <motion.div
-        className="absolute inset-0 bg-[#C8102E]/10"
+        className="absolute inset-0 bg-[#C46E6D]/10"
         animate={{ opacity: hovered ? 1 : 0 }}
         transition={{ duration: 0.3 }}
       />
       <motion.div
-        className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#C8102E]"
+        className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#C46E6D]"
         initial={{ scaleY: 0 }}
         animate={{ scaleY: hovered ? 1 : 0 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
@@ -242,7 +242,7 @@ const CategoryCard = ({ cat, index }: { cat: Category; index: number }) => {
           </h3>
           <motion.div
             className="w-9 h-9 rounded-full border border-white/30 flex items-center justify-center text-white"
-            animate={{ backgroundColor: hovered ? "#C8102E" : "transparent", borderColor: hovered ? "#C8102E" : "rgba(255,255,255,0.3)" }}
+            animate={{ backgroundColor: hovered ? "#C46E6D" : "transparent", borderColor: hovered ? "#C46E6D" : "rgba(255,255,255,0.3)" }}
             transition={{ duration: 0.25 }}
           >
             <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -287,7 +287,7 @@ const CollectionCard = ({ col, index }: { col: Collection; index: number }) => {
           initial={{ opacity: 0, x: -10 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ delay: 0.3 + index * 0.12 }}
-          className="bg-[#C8102E] text-white text-[9px] tracking-[.2em] uppercase font-bold px-3 py-1.5 rounded-sm"
+          className="bg-[#C46E6D] text-white text-[9px] tracking-[.2em] uppercase font-bold px-3 py-1.5 rounded-sm"
         >
           {col.tag}
         </motion.span>
@@ -311,7 +311,7 @@ const CollectionCard = ({ col, index }: { col: Collection; index: number }) => {
         <motion.a
           href={col.href}
           className="inline-flex items-center gap-2 text-[11px] tracking-[.2em] uppercase font-bold"
-          animate={{ color: hovered ? "#C8102E" : "rgba(255,255,255,0.8)" }}
+          animate={{ color: hovered ? "#C46E6D" : "rgba(255,255,255,0.8)" }}
           whileHover={{ x: 4 }}
           transition={{ duration: 0.2 }}
         >
@@ -323,7 +323,7 @@ const CollectionCard = ({ col, index }: { col: Collection; index: number }) => {
         </motion.a>
       </div>
       <motion.div
-        className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#C8102E]"
+        className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#C46E6D]"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: hovered ? 1 : 0 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
@@ -342,7 +342,7 @@ const MarqueeStrip = () => {
   const repeated = [...tags, ...tags, ...tags];
 
   return (
-    <div className="overflow-hidden border-y border-gray-100 py-3.5 bg-white">
+    <div className="overflow-hidden border-y border-gray-100 py-3.5 bg-[#F5F0EB]">
       <motion.div
         className="flex gap-10 whitespace-nowrap"
         animate={{ x: ["0%", "-33.33%"] }}
@@ -351,7 +351,7 @@ const MarqueeStrip = () => {
         {repeated.map((tag, i) => (
           <span key={i} className="flex items-center gap-4 shrink-0">
             <span className="text-[11px] tracking-[.2em] uppercase text-gray-400 font-medium">{tag}</span>
-            <span className="text-[#C8102E] text-xs">✦</span>
+            <span className="text-[#D4A843] text-xs">✦</span>
           </span>
         ))}
       </motion.div>
@@ -373,14 +373,14 @@ const OccasionTabs = () => {
           className="relative text-[11px] tracking-[.15em] uppercase font-semibold px-4 py-2 rounded-sm transition-colors"
           style={{
             color: active === o ? "#fff" : "#6b7280",
-            backgroundColor: active === o ? "#C8102E" : "transparent",
-            border: active === o ? "1px solid #C8102E" : "1px solid #e5e7eb",
+            backgroundColor: active === o ? "#C46E6D" : "transparent",
+            border: active === o ? "1px solid #C46E6D" : "1px solid #e5e7eb",
           }}
         >
           {active === o && (
             <motion.span
               layoutId="tab-pill"
-              className="absolute inset-0 bg-[#C8102E] rounded-sm -z-10"
+              className="absolute inset-0 bg-[#C46E6D] rounded-sm -z-10"
               transition={{ type: "spring", bounce: 0.22, duration: 0.5 }}
             />
           )}
@@ -412,7 +412,7 @@ const OccasionCard = ({ occ, index }: { occ: { label: string; count: string; ima
           {occ.label}
         </h4>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#C8102E] scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
+      <div className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#C46E6D] scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
     </motion.a>
   );
 };
@@ -480,7 +480,7 @@ function StackCards() {
                 <div className="heading-line h-full bg-[#C8102E] w-full origin-left scale-x-0" />
               </div> */}
             </div>
-            <a href="/collections/all" className="group flex items-center gap-2 text-[11px] tracking-[.2em] uppercase font-bold text-gray-500 hover:text-[#C8102E] transition-colors shrink-0 mb-2">
+            <a href="/collections/all" className="group flex items-center gap-2 text-[11px] tracking-[.2em] uppercase font-bold text-gray-500 hover:text-[#C46E6D] transition-colors shrink-0 mb-2">
               View All
               <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" className="group-hover:translate-x-1 transition-transform">
                 <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
@@ -502,7 +502,7 @@ function StackCards() {
           <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
               <SectionHeader eyebrow="Curated for You" title="Featured" titleItalic="Collections" />
-              <a href="/collections" className="group flex items-center gap-2 text-[11px] tracking-[.2em] uppercase font-bold text-gray-500 hover:text-[#C8102E] transition-colors shrink-0 mb-2">
+              <a href="/collections" className="group flex items-center gap-2 text-[11px] tracking-[.2em] uppercase font-bold text-gray-500 hover:text-[#C46E6D] transition-colors shrink-0 mb-2">
                 All Collections
                 <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" className="group-hover:translate-x-1 transition-transform">
                   <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
@@ -538,7 +538,7 @@ function StackCards() {
     },
   ];
 
-  const bgColors = ["bg-white", "bg-[#fafafa]", "bg-white"];
+  const bgColors = ["bg-[#F5F0EB]", "bg-[#F5F0EB]", "bg-[#F5F0EB]"];
 
   return (
     <div ref={containerRef} className="relative">
@@ -582,7 +582,7 @@ export default function ShopByCategory() {
   }, []);
 
   return (
-    <main ref={sectionRef} className="bg-white">
+    <main ref={sectionRef} className="bg-[#F5F0EB]">
       {/* ── STACKING CARDS: 3 sections ── */}
       <div className="px-4 sm:px-6 lg:px-8 py-12">
         <StackCards />

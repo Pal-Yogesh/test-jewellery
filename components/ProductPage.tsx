@@ -34,7 +34,7 @@ export default function ProductPage() {
   return (
 
     <>
-     <div className="min-h-screen bg-white pt-16">
+     <div className="min-h-screen bg-[#F5F0EB] pt-16">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16 py-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
 
@@ -42,7 +42,7 @@ export default function ProductPage() {
           <div>
             {/* Main image */}
             <div
-              className={`relative w-full aspect-square overflow-hidden bg-[#f5f3f0] mb-3 ${
+              className={`relative w-full aspect-square overflow-hidden bg-[#F5F0EB] mb-3 ${
                 imageStyle === "rounded" ? "rounded-2xl" : "rounded-none"
               }`}
             >
@@ -59,11 +59,11 @@ export default function ProductPage() {
                 <button
                   key={i}
                   onClick={() => setSelected(i)}
-                  className={`relative w-20 h-20 overflow-hidden bg-[#f5f3f0] transition-all duration-200 ${
+                  className={`relative w-20 h-20 overflow-hidden bg-[#F5F0EB] transition-all duration-200 ${
                     imageStyle === "rounded" ? "rounded-lg" : "rounded-none"
                   } ${
                     selected === i
-                      ? "ring-2 ring-[#C8102E] ring-offset-2"
+                      ? "ring-2 ring-[#C46E6D] ring-offset-2"
                       : "opacity-60 hover:opacity-100"
                   }`}
                 >
@@ -79,7 +79,7 @@ export default function ProductPage() {
                 onClick={() => setImageStyle("rounded")}
                 className={`text-[10px] tracking-[0.15em] uppercase font-semibold px-3 py-1.5 rounded-full border transition-all ${
                   imageStyle === "rounded"
-                    ? "bg-[#C8102E] text-white border-[#C8102E]"
+                    ? "bg-[#C46E6D] text-white border-[#C46E6D]"
                     : "text-gray-500 border-gray-200 hover:border-gray-400"
                 }`}
               >
@@ -89,7 +89,7 @@ export default function ProductPage() {
                 onClick={() => setImageStyle("sharp")}
                 className={`text-[10px] tracking-[0.15em] uppercase font-semibold px-3 py-1.5 rounded-full border transition-all ${
                   imageStyle === "sharp"
-                    ? "bg-[#C8102E] text-white border-[#C8102E]"
+                    ? "bg-[#C46E6D] text-white border-[#C46E6D]"
                     : "text-gray-500 border-gray-200 hover:border-gray-400"
                 }`}
               >
@@ -101,8 +101,8 @@ export default function ProductPage() {
           {/* ── Right: Info ── */}
           <div className="flex flex-col">
             {/* Badge */}
-            <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-[#C8102E] font-semibold mb-3">
-              <span className="w-5 h-px bg-[#C8102E]" />
+            <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-[#C46E6D] font-semibold mb-3">
+              <span className="w-5 h-px bg-[#C46E6D]" />
               {PRODUCT.badge}
             </span>
 
@@ -134,7 +134,7 @@ export default function ProductPage() {
             <div className="flex flex-col gap-2 mb-6">
               {PRODUCT.offers.map((offer) => (
                 <div key={offer} className="flex items-start gap-2">
-                  <span className="text-[#C8102E] text-xs mt-0.5">✦</span>
+                  <span className="text-[#D4A843] text-xs mt-0.5">✦</span>
                   <p className="text-[12px] text-gray-500">{offer}</p>
                 </div>
               ))}
@@ -142,7 +142,7 @@ export default function ProductPage() {
 
             {/* Buttons */}
             <div className="flex flex-col gap-3 mb-8">
-              <button className="w-full bg-[#C8102E] hover:bg-[#a00d24] text-white text-[11px] tracking-[0.22em] uppercase font-bold py-4 rounded-sm transition-colors">
+              <button className="w-full bg-[#C46E6D] hover:bg-[#A85857] text-white text-[11px] tracking-[0.22em] uppercase font-bold py-4 rounded-sm transition-colors">
                 Add to Cart
               </button>
               <button className="w-full bg-gray-900 hover:bg-gray-800 text-white text-[11px] tracking-[0.22em] uppercase font-bold py-4 rounded-sm transition-colors">
