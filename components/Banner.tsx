@@ -31,7 +31,7 @@ const SLIDES: Slide[] = [
     cta: "Explore Collection",
     ctaHref: "/collections/new-arrivals",
     secondaryCta: "Our Story",
-    accent: "#C46E6D",
+    accent: "#8B8B3E",
     bgGradient: "from-[#1a0a0a] via-[#2d1010] to-[#0f0505]",
     imageUrl: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=900&q=80",
     imageAlt: "Traditional Indian jewellery",
@@ -46,7 +46,7 @@ const SLIDES: Slide[] = [
     cta: "Shop Bridal",
     ctaHref: "/collections/bridal",
     secondaryCta: "View Lookbook",
-    accent: "#C46E6D",
+    accent: "#8B8B3E",
     bgGradient: "from-[#0d0d0d] via-[#1c1010] to-[#0a0505]",
     imageUrl: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=900&q=80",
     imageAlt: "Bridal jewellery set",
@@ -60,7 +60,7 @@ const SLIDES: Slide[] = [
     sub: "Meet the artisans behind every clasp, every curve — jewellery made by hand, felt by heart.",
     cta: "Meet Designers",
     ctaHref: "/designers",
-    accent: "#C46E6D",
+    accent: "#8B8B3E",
     bgGradient: "from-[#080808] via-[#161010] to-[#080808]",
     imageUrl: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=900&q=80",
     imageAlt: "Artisan jewellery craft",
@@ -75,7 +75,7 @@ const SLIDES: Slide[] = [
     cta: "Shop Festive",
     ctaHref: "/collections/festive",
     secondaryCta: "Gift Cards",
-    accent: "#C46E6D",
+    accent: "#8B8B3E",
     bgGradient: "from-[#150808] via-[#2a0f0f] to-[#0d0808]",
     imageUrl: "https://images.unsplash.com/photo-1573408301185-9519f94816b4?w=900&q=80",
     imageAlt: "Festive jewellery",
@@ -97,7 +97,7 @@ const ProgressRing = ({ active, duration }: { active: boolean; duration: number 
         <motion.circle
           cx="14" cy="14" r={r}
           fill="none"
-          stroke="#C46E6D"
+          stroke="#8B8B3E"
           strokeWidth="2"
           strokeLinecap="round"
           strokeDasharray={circ}
@@ -144,7 +144,7 @@ const SlideContent = ({ slide, isActive }: { slide: Slide; isActive: boolean }) 
       {/* Eyebrow */}
       <motion.div variants={itemVariants} className="flex items-center gap-3 mb-5">
         {slide.tag && (
-          <span className="bg-[#C46E6D] text-white text-[9px] tracking-[.2em] uppercase font-bold px-2.5 py-1 rounded-sm">
+          <span className="bg-[#8B8B3E] text-white text-[9px] tracking-[.2em] uppercase font-bold px-2.5 py-1 rounded-sm">
             {slide.tag}
           </span>
         )}
@@ -171,7 +171,7 @@ const SlideContent = ({ slide, isActive }: { slide: Slide; isActive: boolean }) 
                 {line}{" "}
                 <span
                   className="italic"
-                  style={{ color: "#C46E6D", WebkitTextStroke: "0px" }}
+                  style={{ color: "#8B8B3E", WebkitTextStroke: "0px" }}
                 >
                   ✦
                 </span>
@@ -198,11 +198,11 @@ const SlideContent = ({ slide, isActive }: { slide: Slide; isActive: boolean }) 
           href={slide.ctaHref}
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          className="relative group overflow-hidden bg-[#C46E6D] text-white text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm"
+          className="relative group overflow-hidden bg-[#8B8B3E] text-white text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm"
         >
           <span className="relative z-10">{slide.cta}</span>
           <motion.span
-            className="absolute inset-0 bg-[#A85857]"
+            className="absolute inset-0 bg-[#747430]"
             initial={{ x: "-100%" }}
             whileHover={{ x: 0 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
@@ -362,7 +362,7 @@ export default function Banner() {
           style={{ left: "8%" }}
         />
         <div
-          className="decor-line absolute right-0 bottom-1/3 w-[1px] h-48 bg-gradient-to-b from-transparent via-[#C46E6D]/40 to-transparent origin-bottom"
+          className="decor-line absolute right-0 bottom-1/3 w-[1px] h-48 bg-gradient-to-b from-transparent via-[#8B8B3E]/40 to-transparent origin-bottom"
           style={{ right: "8%" }}
         />
         <div
@@ -420,7 +420,7 @@ export default function Banner() {
                 <ProgressRing active={i === current} duration={DURATION} />
                 <span
                   className="w-1.5 h-1.5 rounded-full transition-all duration-300"
-                  style={{ background: i === current ? "#C46E6D" : "rgba(255,255,255,0.35)" }}
+                  style={{ background: i === current ? "#8B8B3E" : "rgba(255,255,255,0.35)" }}
                 />
               </button>
             ))}
@@ -446,7 +446,7 @@ export default function Banner() {
               onClick={prev_}
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.93 }}
-              className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-[#C46E6D] hover:bg-[#C46E6D]/10 transition-all"
+              className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-[#8B8B3E] hover:bg-[#8B8B3E]/10 transition-all"
             >
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <polyline points="15 18 9 12 15 6" />
@@ -456,7 +456,7 @@ export default function Banner() {
               onClick={next}
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.93 }}
-              className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-[#C46E6D] hover:bg-[#C46E6D]/10 transition-all"
+              className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-[#8B8B3E] hover:bg-[#8B8B3E]/10 transition-all"
             >
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <polyline points="9 18 15 12 9 6" />

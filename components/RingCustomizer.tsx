@@ -235,7 +235,7 @@ function OptionGroup<T extends { id: string; label: string }>({
               whileTap={{ scale: 0.95 }}
               className={`relative flex items-center gap-2 px-3.5 py-2 rounded-sm text-[11px] tracking-[.12em] uppercase font-semibold transition-all duration-200 border ${
                 isActive
-                  ? "border-[#C46E6D] text-[#C46E6D] bg-red-50/60"
+                  ? "border-[#8B8B3E] text-[#8B8B3E] bg-red-50/60"
                   : "border-gray-200 text-gray-500 hover:border-gray-300 bg-white"
               }`}
             >
@@ -244,7 +244,7 @@ function OptionGroup<T extends { id: string; label: string }>({
               {isActive && (
                 <motion.span
                   layoutId={`sel-${title}`}
-                  className="absolute inset-0 border-2 border-[#C46E6D] rounded-sm pointer-events-none"
+                  className="absolute inset-0 border-2 border-[#8B8B3E] rounded-sm pointer-events-none"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.4 }}
                 />
               )}
@@ -290,11 +290,11 @@ export default function RingCustomizer() {
             initial={{ opacity: 0, y: 10 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="text-[11px] tracking-[.25em] uppercase text-[#C46E6D] font-semibold mb-4 flex items-center justify-center gap-2"
+            className="text-[11px] tracking-[.25em] uppercase text-[#8B8B3E] font-semibold mb-4 flex items-center justify-center gap-2"
           >
-            <span className="w-6 h-px bg-[#C46E6D] inline-block" />
+            <span className="w-6 h-px bg-[#8B8B3E] inline-block" />
             Interactive
-            <span className="w-6 h-px bg-[#C46E6D] inline-block" />
+            <span className="w-6 h-px bg-[#8B8B3E] inline-block" />
           </motion.span>
 
           <motion.h2
@@ -308,7 +308,7 @@ export default function RingCustomizer() {
             }}
           >
             Design Your{" "}
-            <em className="text-[#C46E6D]" style={{ fontStyle: "italic" }}>
+            <em className="text-[#8B8B3E]" style={{ fontStyle: "italic" }}>
               Dream Ring
             </em>
           </motion.h2>
@@ -431,7 +431,7 @@ export default function RingCustomizer() {
                 href="/custom-ring"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
-                className="flex-1 text-center bg-[#C46E6D] hover:bg-[#A85857] text-white text-[11px] tracking-[.2em] uppercase font-bold px-6 py-3.5 rounded-sm transition-colors"
+                className="flex-1 text-center bg-[#8B8B3E] hover:bg-[#747430] text-white text-[11px] tracking-[.2em] uppercase font-bold px-6 py-3.5 rounded-sm transition-colors"
               >
                 Start Custom Order
               </motion.a>
@@ -439,7 +439,7 @@ export default function RingCustomizer() {
                 href="/appointment"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
-                className="flex-1 text-center border border-gray-200 hover:border-[#C46E6D] text-gray-600 hover:text-[#C46E6D] text-[11px] tracking-[.2em] uppercase font-bold px-6 py-3.5 rounded-sm transition-all"
+                className="flex-1 text-center border border-gray-200 hover:border-[#8B8B3E] text-gray-600 hover:text-[#8B8B3E] text-[11px] tracking-[.2em] uppercase font-bold px-6 py-3.5 rounded-sm transition-all"
               >
                 Book Consultation
               </motion.a>

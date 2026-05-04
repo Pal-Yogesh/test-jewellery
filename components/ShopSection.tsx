@@ -243,7 +243,7 @@ function ProductCard({ product }: { product: Product }) {
       <p className="text-[10px] tracking-[0.2em] uppercase text-gray-400 mb-1">
         {product.brand}
       </p>
-      <p className="text-sm font-semibold text-gray-900 leading-snug mb-1 group-hover:text-[#C46E6D] transition-colors duration-200">
+      <p className="text-sm font-semibold text-gray-900 leading-snug mb-1 group-hover:text-[#8B8B3E] transition-colors duration-200">
         {product.name}
       </p>
       <p className="text-sm text-gray-600">{product.price}</p>
@@ -269,7 +269,7 @@ function SectionCard({ section }: { section: Section }) {
       {/* Card header */}
       <div className="px-3 pt-8 pb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-gray-100">
         <div>
-          <span className="text-[10px] tracking-[0.25em] uppercase text-[#C46E6D] font-semibold flex items-center gap-2 mb-2">
+          <span className="text-[10px] tracking-[0.25em] uppercase text-[#8B8B3E] font-semibold flex items-center gap-2 mb-2">
             {section.subheading}
           </span>
           <h2
@@ -293,9 +293,9 @@ function SectionCard({ section }: { section: Section }) {
                 onClick={() => setActiveFilter(f)}
                 className="text-[11px] tracking-[0.12em] uppercase font-semibold px-5 py-4 rounded-full border transition-all duration-200"
                 style={{
-                  background: activeFilter === f ? "#C46E6D" : "transparent",
+                  background: activeFilter === f ? "#8B8B3E" : "transparent",
                   color: activeFilter === f ? "#fff" : "#6b7280",
-                  borderColor: activeFilter === f ? "#C46E6D" : "#e5e7eb",
+                  borderColor: activeFilter === f ? "#8B8B3E" : "#e5e7eb",
                 }}
               >
                 {f}
@@ -307,7 +307,7 @@ function SectionCard({ section }: { section: Section }) {
           <div className="flex items-center gap-2 ml-2">
             <button
               onClick={() => scroll("left")}
-              className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-[#C46E6D] hover:text-[#C46E6D] transition-all"
+              className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-[#8B8B3E] hover:text-[#8B8B3E] transition-all"
               aria-label="Scroll left"
             >
               <svg
@@ -323,7 +323,7 @@ function SectionCard({ section }: { section: Section }) {
             </button>
             <button
               onClick={() => scroll("right")}
-              className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-[#C46E6D] hover:text-[#C46E6D] transition-all"
+              className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-[#8B8B3E] hover:text-[#8B8B3E] transition-all"
               aria-label="Scroll right"
             >
               <svg
@@ -356,7 +356,7 @@ function SectionCard({ section }: { section: Section }) {
             href={`/collections/${section.id}`}
             className="flex flex-col items-center gap-3 text-center group"
           >
-            <div className="w-14 h-14 rounded-full border-2 border-gray-200 group-hover:border-[#C46E6D] flex items-center justify-center text-gray-400 group-hover:text-[#C46E6D] transition-all duration-300">
+            <div className="w-14 h-14 rounded-full border-2 border-gray-200 group-hover:border-[#8B8B3E] flex items-center justify-center text-gray-400 group-hover:text-[#8B8B3E] transition-all duration-300">
               <svg
                 width="18"
                 height="18"
@@ -369,7 +369,7 @@ function SectionCard({ section }: { section: Section }) {
                 <polyline points="12 5 19 12 12 19" />
               </svg>
             </div>
-            <span className="text-[11px] tracking-[0.2em] uppercase font-bold text-gray-400 group-hover:text-[#C46E6D] transition-colors">
+            <span className="text-[11px] tracking-[0.2em] uppercase font-bold text-gray-400 group-hover:text-[#8B8B3E] transition-colors">
               View All
             </span>
           </a>

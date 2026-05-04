@@ -72,11 +72,11 @@ const SectionHeader = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
-        className="text-[11px] tracking-[.25em] uppercase text-[#C46E6D] font-semibold mb-4 flex items-center gap-2"
+        className="text-[11px] tracking-[.25em] uppercase text-[#8B8B3E] font-semibold mb-4 flex items-center gap-2"
       >
-        <span className="w-6 h-px bg-[#C46E6D] inline-block" />
+        <span className="w-6 h-px bg-[#8B8B3E] inline-block" />
         Our Heritage
-        <span className="w-6 h-px bg-[#C46E6D] inline-block" />
+        <span className="w-6 h-px bg-[#8B8B3E] inline-block" />
       </motion.span>
 
       <motion.h2
@@ -90,7 +90,7 @@ const SectionHeader = () => {
         }}
       >
         A Century of{" "}
-        <em className="text-[#C46E6D]" style={{ fontStyle: "italic" }}>
+        <em className="text-[#8B8B3E]" style={{ fontStyle: "italic" }}>
           Excellence
         </em>
       </motion.h2>
@@ -136,7 +136,7 @@ const EventCard = ({
         isLeft ? "sm:pr-8 lg:pr-12" : "sm:pl-8 lg:pl-12"
       } mb-8 sm:mb-0`}
     >
-      <div className="group relative bg-white rounded-sm overflow-hidden border border-gray-100 hover:border-[#C46E6D]/20 transition-all duration-500 hover:shadow-[0_8px_40px_rgba(196,110,109,0.08)]">
+      <div className="group relative bg-white rounded-sm overflow-hidden border border-gray-100 hover:border-[#8B8B3E]/20 transition-all duration-500 hover:shadow-[0_8px_40px_rgba(139,139,62,0.08)]">
         {/* Image */}
         <div className="relative h-44 sm:h-52 overflow-hidden">
           <img
@@ -162,7 +162,7 @@ const EventCard = ({
 
           {/* Milestone tag */}
           <div className="absolute top-4 right-4">
-            <span className="bg-[#C46E6D] text-white text-[9px] tracking-[.2em] uppercase font-bold px-2.5 py-1 rounded-sm">
+            <span className="bg-[#8B8B3E] text-white text-[9px] tracking-[.2em] uppercase font-bold px-2.5 py-1 rounded-sm">
               {event.milestone}
             </span>
           </div>
@@ -176,7 +176,7 @@ const EventCard = ({
               width="14"
               height="14"
               fill="none"
-              stroke="#C46E6D"
+              stroke="#8B8B3E"
               strokeWidth="1.5"
               viewBox="0 0 24 24"
             >
@@ -210,7 +210,7 @@ const EventCard = ({
           </p>
 
           {/* Bottom red accent line */}
-          <div className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#C46E6D] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+          <div className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#8B8B3E] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
         </div>
       </div>
     </motion.div>
@@ -231,9 +231,9 @@ const TimelineNode = ({ index }: { index: number }) => {
         initial={{ scale: 0 }}
         animate={inView ? { scale: 1 } : {}}
         transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-        className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-[3px] border-[#C46E6D] bg-white flex items-center justify-center shadow-[0_0_0_4px_rgba(196,110,109,0.1)]"
+        className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-[3px] border-[#8B8B3E] bg-white flex items-center justify-center shadow-[0_0_0_4px_rgba(139,139,62,0.1)]"
       >
-        <span className="w-1.5 h-1.5 rounded-full bg-[#C46E6D]" />
+        <span className="w-1.5 h-1.5 rounded-full bg-[#8B8B3E]" />
       </motion.div>
     </div>
   );
@@ -263,13 +263,13 @@ const CtaSection = () => {
         />
         {/* Decorative lines */}
         <div className="absolute left-[6%] top-6 w-px h-16 bg-linear-to-b from-transparent via-white/15 to-transparent" />
-        <div className="absolute right-[6%] bottom-6 w-px h-16 bg-linear-to-b from-transparent via-[#C46E6D]/40 to-transparent" />
+        <div className="absolute right-[6%] bottom-6 w-px h-16 bg-linear-to-b from-transparent via-[#8B8B3E]/40 to-transparent" />
 
         <div className="relative z-10">
-          <span className="text-[11px] tracking-[.25em] uppercase text-[#C46E6D] font-semibold flex items-center justify-center gap-2 mb-5">
-            <span className="w-6 h-px bg-[#C46E6D]" />
+          <span className="text-[11px] tracking-[.25em] uppercase text-[#8B8B3E] font-semibold flex items-center justify-center gap-2 mb-5">
+            <span className="w-6 h-px bg-[#8B8B3E]" />
             Visit Us
-            <span className="w-6 h-px bg-[#C46E6D]" />
+            <span className="w-6 h-px bg-[#8B8B3E]" />
           </span>
 
           <h3
@@ -280,7 +280,7 @@ const CtaSection = () => {
             }}
           >
             Be Part of Our{" "}
-            <em className="text-[#C46E6D]" style={{ fontStyle: "italic" }}>
+            <em className="text-[#8B8B3E]" style={{ fontStyle: "italic" }}>
               Story
             </em>
           </h3>
@@ -299,13 +299,13 @@ const CtaSection = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="/boutiques"
-              className="bg-[#C46E6D] hover:bg-[#A85857] text-white text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm transition-colors"
+              className="bg-[#8B8B3E] hover:bg-[#747430] text-white text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm transition-colors"
             >
               Find a Boutique
             </a>
             <a
               href="/appointment"
-              className="border border-white/20 hover:border-[#C46E6D] text-white/70 hover:text-white text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm transition-all"
+              className="border border-white/20 hover:border-[#8B8B3E] text-white/70 hover:text-white text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm transition-all"
             >
               Book Appointment
             </a>
@@ -369,7 +369,7 @@ export default function Timeline() {
         {/* Center line */}
         <div className="absolute left-6 sm:left-1/2 sm:-translate-x-1/2 w-px h-[85%] bg-gray-200">
           <motion.div
-            className="w-full bg-[#C46E6D] origin-top"
+            className="w-full bg-[#8B8B3E] origin-top"
             style={{ scaleY: lineProgress, height: "100%" }}
           />
         </div>

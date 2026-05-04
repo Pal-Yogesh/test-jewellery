@@ -41,7 +41,7 @@ export default function Footer() {
                     <motion.a
                       key={index}
                       href="#"
-                      className="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-[#C46E6D] hover:text-white transition-colors text-stone-400"
+                      className="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-[#8B8B3E] hover:text-white transition-colors text-stone-400"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -113,7 +113,7 @@ export default function Footer() {
                 <h4 className="text-lg font-serif text-white mb-6">Contact</h4>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <MapPin className="w-5 h-5 text-[#C46E6D] mt-1 shrink-0" />
+                    <MapPin className="w-5 h-5 text-[#8B8B3E] mt-1 shrink-0" />
                     <div>
                       <p className="text-stone-300 font-light text-sm">Brand Studio</p>
                       <p className="text-stone-400 font-light text-sm">
@@ -122,11 +122,11 @@ export default function Footer() {
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-[#C46E6D] shrink-0" />
+                    <Phone className="w-5 h-5 text-[#8B8B3E] shrink-0" />
                     <p className="text-stone-300 font-light text-sm">+91 22 2600 0000</p>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-[#C46E6D] shrink-0" />
+                    <Mail className="w-5 h-5 text-[#8B8B3E] shrink-0" />
                     <p className="text-stone-300 font-light text-sm">hello@Brand.in</p>
                   </div>
                 </div>

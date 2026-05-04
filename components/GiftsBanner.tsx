@@ -44,7 +44,7 @@ export default function GiftsBanner() {
             initial={{ opacity: 0, y: 12 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, ease, delay: 0.15 }}
-            className="text-[10px] tracking-[0.28em] uppercase text-[#C46E6D] font-semibold mb-3"
+            className="text-[10px] tracking-[0.28em] uppercase text-[#8B8B3E] font-semibold mb-3"
           >
             Amer Jewels
           </motion.p>
@@ -58,7 +58,7 @@ export default function GiftsBanner() {
             style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
           >
             Jewellery That Tells{" "}
-            <em className="italic text-[#C46E6D]">Your Story</em>
+            <em className="italic text-[#8B8B3E]">Your Story</em>
           </motion.h2>
 
           {/* Body */}
@@ -81,7 +81,7 @@ export default function GiftsBanner() {
           >
             <a
               href="/collections/amer-jewels"
-              className="bg-[#C46E6D] hover:bg-[#A85857] text-white text-[10px] tracking-[0.2em] uppercase font-bold px-7 py-3 rounded-full transition-colors inline-flex items-center gap-2"
+              className="bg-[#8B8B3E] hover:bg-[#747430] text-white text-[10px] tracking-[0.2em] uppercase font-bold px-7 py-3 rounded-full transition-colors inline-flex items-center gap-2"
             >
               Shop Now
               <svg width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">

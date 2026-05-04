@@ -107,11 +107,11 @@ export default function TrustItemStrip() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="text-[11px] tracking-[.28em] uppercase text-[#C46E6D] font-semibold flex items-center justify-center gap-3 mb-5"
+                  className="text-[11px] tracking-[.28em] uppercase text-[#8B8B3E] font-semibold flex items-center justify-center gap-3 mb-5"
                 >
-                  <span className="w-8 h-px bg-[#C46E6D]" />
+                  <span className="w-8 h-px bg-[#8B8B3E]" />
                   Our Promise
-                  <span className="w-8 h-px bg-[#C46E6D]" />
+                  <span className="w-8 h-px bg-[#8B8B3E]" />
                 </motion.span>
                 <motion.h2
                   initial={{ opacity: 0, y: 30 }}
@@ -125,7 +125,7 @@ export default function TrustItemStrip() {
                   }}
                 >
                   Made by Hand,{" "}
-                  <em className="italic text-[#C46E6D]">Felt by Heart</em>
+                  <em className="italic text-[#8B8B3E]">Felt by Heart</em>
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -151,13 +151,13 @@ export default function TrustItemStrip() {
                 >
                   <a
                     href="/about"
-                    className="bg-[#C46E6D] hover:bg-[#A85857] text-white text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm transition-colors"
+                    className="bg-[#8B8B3E] hover:bg-[#747430] text-white text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm transition-colors"
                   >
                     Our Story
                   </a>
                   <a
                     href="/designers"
-                    className="border border-gray-300 hover:border-[#C46E6D] text-gray-600 hover:text-[#C46E6D] text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm transition-all"
+                    className="border border-gray-300 hover:border-[#8B8B3E] text-gray-600 hover:text-[#8B8B3E] text-[11px] tracking-[.2em] uppercase font-bold px-8 py-3.5 rounded-sm transition-all"
                   >
                     Meet Designers
                   </a>
@@ -176,7 +176,7 @@ export default function TrustItemStrip() {
                 transition={{ duration: 0.55, delay: i * 0.1 }}
                 className="flex flex-col items-center text-center gap-3 group"
               >
-                <div className="w-14 h-14 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-[#C46E6D] group-hover:text-[#C46E6D] transition-all duration-300">
+                <div className="w-14 h-14 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-[#8B8B3E] group-hover:text-[#8B8B3E] transition-all duration-300">
                   {item.icon}
                 </div>
                 <div>

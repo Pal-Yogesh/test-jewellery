@@ -128,7 +128,7 @@
   cursor: pointer;
 }
 .sponsored-btn:hover {
-  background-color: #C46E6D;
+  background-color: #8B8B3E;
   color: #fff;
 }
 .sponsored-btn svg {
@@ -145,7 +145,7 @@
   color: rgba(255, 255, 255, 0.6);
 }
 .sponsored-counter .current {
-  color: #C46E6D;
+  color: #8B8B3E;
   font-weight: 700;
 }
 
@@ -216,14 +216,14 @@
   font-size: 0.7rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #C46E6D;
+  color: #8B8B3E;
   font-weight: 600;
 }
 .sponsored-heading__line {
   display: inline-block;
   width: 2rem;
   height: 1px;
-  background: #C46E6D;
+  background: #8B8B3E;
 }
 .sponsored-heading__title {
   font-family: "Cormorant Garamond", serif;
@@ -235,7 +235,7 @@
 }
 .sponsored-heading__title em {
   font-style: italic;
-  color: #C46E6D;
+  color: #8B8B3E;
 }
 .sponsored-heading__sub {
   font-family: "Cormorant Garamond", serif;

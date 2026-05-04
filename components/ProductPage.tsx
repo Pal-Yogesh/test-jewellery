@@ -63,7 +63,7 @@ export default function ProductPage() {
                     imageStyle === "rounded" ? "rounded-lg" : "rounded-none"
                   } ${
                     selected === i
-                      ? "ring-2 ring-[#C46E6D] ring-offset-2"
+                      ? "ring-2 ring-[#8B8B3E] ring-offset-2"
                       : "opacity-60 hover:opacity-100"
                   }`}
                 >
@@ -79,7 +79,7 @@ export default function ProductPage() {
                 onClick={() => setImageStyle("rounded")}
                 className={`text-[10px] tracking-[0.15em] uppercase font-semibold px-3 py-1.5 rounded-full border transition-all ${
                   imageStyle === "rounded"
-                    ? "bg-[#C46E6D] text-white border-[#C46E6D]"
+                    ? "bg-[#8B8B3E] text-white border-[#8B8B3E]"
                     : "text-gray-500 border-gray-200 hover:border-gray-400"
                 }`}
               >
@@ -89,7 +89,7 @@ export default function ProductPage() {
                 onClick={() => setImageStyle("sharp")}
                 className={`text-[10px] tracking-[0.15em] uppercase font-semibold px-3 py-1.5 rounded-full border transition-all ${
                   imageStyle === "sharp"
-                    ? "bg-[#C46E6D] text-white border-[#C46E6D]"
+                    ? "bg-[#8B8B3E] text-white border-[#8B8B3E]"
                     : "text-gray-500 border-gray-200 hover:border-gray-400"
                 }`}
               >
@@ -101,8 +101,8 @@ export default function ProductPage() {
           {/* ── Right: Info ── */}
           <div className="flex flex-col">
             {/* Badge */}
-            <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-[#C46E6D] font-semibold mb-3">
-              <span className="w-5 h-px bg-[#C46E6D]" />
+            <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-[#8B8B3E] font-semibold mb-3">
+              <span className="w-5 h-px bg-[#8B8B3E]" />
               {PRODUCT.badge}
             </span>
 
@@ -142,7 +142,7 @@ export default function ProductPage() {
 
             {/* Buttons */}
             <div className="flex flex-col gap-3 mb-8">
-              <button className="w-full bg-[#C46E6D] hover:bg-[#A85857] text-white text-[11px] tracking-[0.22em] uppercase font-bold py-4 rounded-sm transition-colors">
+              <button className="w-full bg-[#8B8B3E] hover:bg-[#747430] text-white text-[11px] tracking-[0.22em] uppercase font-bold py-4 rounded-sm transition-colors">
                 Add to Cart
               </button>
               <button className="w-full bg-gray-900 hover:bg-gray-800 text-white text-[11px] tracking-[0.22em] uppercase font-bold py-4 rounded-sm transition-colors">

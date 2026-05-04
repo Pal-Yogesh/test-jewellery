@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, EffectCreative } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
@@ -47,17 +48,33 @@ export default function Hero() {
       >
         {SLIDES.map((src, i) => (
           <SwiperSlide key={i}>
-            <img
-              src={src}
-              alt=""
-              className="w-full h-full object-cover"
-              draggable={false}
-            />
+            <img src={src} alt="" className="w-full h-full object-cover" draggable={false} />
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* BRAND logo — responsive with Tailwind, clipped inside hero */}
+      {/* Gradient overlay for button readability */}
+      <div className="absolute inset-0 z-5 pointer-events-none bg-linear-to-t from-black/40 via-transparent to-transparent" />
+
+      {/* CTA Button — bottom left */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
+        className="absolute bottom-20 left-6 sm:left-10 z-10"
+      >
+        <a
+          href="/product"
+          className="inline-flex items-center gap-2 bg-[#8B8B3E] hover:bg-[#747430] text-white text-[11px] tracking-[0.22em] uppercase font-bold px-8 py-3.5 rounded-full transition-colors shadow-lg"
+        >
+          Go to Shop
+          <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+            <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+      </motion.div>
+
+      {/* BRAND logo */}
       <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 pointer-events-none select-none">
         <span
           className="block text-white font-normal leading-none tracking-tight drop-shadow-[0_2px_40px_rgba(0,0,0,0.18)] text-[5rem] sm:text-[10rem] md:text-[13rem] lg:text-[16rem]"
@@ -67,10 +84,10 @@ export default function Hero() {
         </span>
       </div>
 
-      {/* Arrow buttons */}
+      {/* Arrow buttons — now Sage */}
       <button
         ref={prevRef}
-        className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#C46E6D] hover:bg-[#A85857] flex items-center justify-center transition-colors duration-200 shadow-lg"
+        className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#8B8B3E] hover:bg-[#747430] flex items-center justify-center transition-colors duration-200 shadow-lg"
         aria-label="Previous"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
@@ -79,7 +96,7 @@ export default function Hero() {
       </button>
       <button
         ref={nextRef}
-        className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#C46E6D] hover:bg-[#A85857] flex items-center justify-center transition-colors duration-200 shadow-lg"
+        className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#8B8B3E] hover:bg-[#747430] flex items-center justify-center transition-colors duration-200 shadow-lg"
         aria-label="Next"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">

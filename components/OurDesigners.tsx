@@ -105,10 +105,10 @@ function DesignerCard({ designer }: { designer: Designer }) {
       </div>
 
       {/* Info */}
-      <p className="text-[10px] tracking-[0.2em] uppercase text-[#C46E6D] font-semibold mb-1">
+      <p className="text-[10px] tracking-[0.2em] uppercase text-[#8B8B3E] font-semibold mb-1">
         {designer.specialty}
       </p>
-      <p className="text-sm font-semibold text-gray-900 leading-snug mb-1 group-hover:text-[#C46E6D] transition-colors duration-200">
+      <p className="text-sm font-semibold text-gray-900 leading-snug mb-1 group-hover:text-[#8B8B3E] transition-colors duration-200">
         {designer.name}
       </p>
       <p className="text-[11px] text-gray-400">{designer.pieces}</p>
@@ -130,7 +130,7 @@ export default function OurDesigners() {
       {/* Header */}
       <div className="px-3 pt-8 pb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-gray-100">
         <div>
-          <span className="text-[10px] tracking-[0.25em] uppercase text-[#C46E6D] font-semibold flex items-center gap-2 mb-2">
+          <span className="text-[10px] tracking-[0.25em] uppercase text-[#8B8B3E] font-semibold flex items-center gap-2 mb-2">
             India&apos;s finest artisan collective
           </span>
           <h2
@@ -144,13 +144,13 @@ export default function OurDesigners() {
         <div className="flex items-center gap-3">
           <a
             href="/designers"
-            className="text-[11px] tracking-[0.2em] uppercase font-bold text-gray-500 hover:text-[#C46E6D] transition-colors border-b border-gray-300 hover:border-[#C46E6D] pb-0.5 mr-2"
+            className="text-[11px] tracking-[0.2em] uppercase font-bold text-gray-500 hover:text-[#8B8B3E] transition-colors border-b border-gray-300 hover:border-[#8B8B3E] pb-0.5 mr-2"
           >
             View All
           </a>
           <button
             onClick={() => scroll("left")}
-            className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-[#C46E6D] hover:text-[#C46E6D] transition-all"
+            className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-[#8B8B3E] hover:text-[#8B8B3E] transition-all"
             aria-label="Scroll left"
           >
             <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -159,7 +159,7 @@ export default function OurDesigners() {
           </button>
           <button
             onClick={() => scroll("right")}
-            className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-[#C46E6D] hover:text-[#C46E6D] transition-all"
+            className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-[#8B8B3E] hover:text-[#8B8B3E] transition-all"
             aria-label="Scroll right"
           >
             <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -181,12 +181,12 @@ export default function OurDesigners() {
         {/* View all card */}
         <div className="shrink-0 w-[220px] sm:w-[240px] flex items-center justify-center">
           <a href="/designers" className="flex flex-col items-center gap-3 text-center group">
-            <div className="w-14 h-14 rounded-full border-2 border-gray-200 group-hover:border-[#C46E6D] flex items-center justify-center text-gray-400 group-hover:text-[#C46E6D] transition-all duration-300">
+            <div className="w-14 h-14 rounded-full border-2 border-gray-200 group-hover:border-[#8B8B3E] flex items-center justify-center text-gray-400 group-hover:text-[#8B8B3E] transition-all duration-300">
               <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
               </svg>
             </div>
-            <span className="text-[11px] tracking-[0.2em] uppercase font-bold text-gray-400 group-hover:text-[#C46E6D] transition-colors">
+            <span className="text-[11px] tracking-[0.2em] uppercase font-bold text-gray-400 group-hover:text-[#8B8B3E] transition-colors">
               All Designers
             </span>
           </a>
