@@ -139,14 +139,14 @@ export default function SponsoredProduct() {
 
       {/* ── Bottom Bar ── */}
       <div className="sponsored-bottom">
-        <div className="sponsored-nav">
+        {/* <div className="sponsored-nav">
           <button ref={prevRef} className="sponsored-btn is-prev" aria-label="Previous slide">
             <NavArrow direction="left" />
           </button>
           <button ref={nextRef} className="sponsored-btn" aria-label="Next slide">
             <NavArrow direction="right" />
           </button>
-        </div>
+        </div> */}
 
         <p className="sponsored-counter">
           <span className="current">{pad(currentSlide)}</span> — {pad(SLIDES.length)}
