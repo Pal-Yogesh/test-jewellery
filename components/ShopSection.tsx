@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import SponsoredProduct from "./SponsoredProduct";
 
 // ─── Types ─────────────────────────────────────────────────────────────────
@@ -200,60 +200,72 @@ const SECTIONS: Section[] = [
 ];
 
 // ─── Product Card ──────────────────────────────────────────────────────────
-function ProductCard({ product }: { product: Product }) {
+function ProductCard({ product, index }: { product: Product; index: number }) {
   const [hovered, setHovered] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <div
-      className="shrink-0 w-[220px] sm:w-[300px] cursor-pointer group"
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 1, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
+      className="shrink-0 w-[220px] sm:w-[300px] cursor-pointer group relative overflow-hidden rounded-2xl aspect-3/4"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Image container */}
-      <div className="relative overflow-hidden rounded-[20px] bg-[#F5F0EB] aspect-3/4 mb-3">
-        {/* Primary image */}
-        <motion.img
-          src={product.images[0]}
-          alt={product.name}
-          className="absolute inset-0 w-full h-full object-cover object-top"
-          animate={{ x: hovered ? "-8%" : "0%", scale: hovered ? 1.04 : 1 }}
-          transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-        />
-        {/* Hover image — peeks in from the right */}
-        <motion.img
-          src={product.images[1]}
-          alt={product.name}
-          className="absolute inset-0 w-full h-full object-cover object-top"
-          initial={{ x: "100%" }}
-          animate={{ x: hovered ? "0%" : "100%" }}
-          transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-        />
-        {/* Quick add pill */}
-        <motion.div
-          className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white text-gray-900 text-[10px] tracking-[0.18em] uppercase font-bold px-5 py-2 rounded-full shadow-md whitespace-nowrap"
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 8 }}
-          transition={{ duration: 0.25 }}
+      {/* Primary image */}
+      <motion.img
+        src={product.images[0]}
+        alt={product.name}
+        className="absolute inset-0 w-full h-full object-cover"
+        animate={{ x: hovered ? "-8%" : "0%", scale: hovered ? 1.06 : 1 }}
+        transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+      />
+      {/* Hover image — peeks in from the right */}
+      <motion.img
+        src={product.images[1]}
+        alt={product.name}
+        className="absolute inset-0 w-full h-full object-cover"
+        initial={{ x: "100%" }}
+        animate={{ x: hovered ? "0%" : "100%" }}
+        transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+      />
+
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-linear-to-t from-[#2D1215]/75 via-[#2D1215]/15 to-transparent group-hover:from-[#2D1215]/85 transition-all duration-[600ms]" />
+
+      {/* Bottom content — inside the card */}
+      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+        <p className="text-[9px] tracking-[0.2em] uppercase text-white/50 mb-1">
+          {product.brand}
+        </p>
+        <p className="text-white font-semibold leading-snug mb-1 text-sm sm:text-base group-hover:text-[#D4A843] transition-colors duration-500"
+          style={{ fontFamily: "'Cormorant Garamond', serif" }}
         >
-          Quick Add
-        </motion.div>
+          {product.name}
+        </p>
+        <p className="text-white/70 text-sm">{product.price}</p>
       </div>
 
-      {/* Info */}
-      <p className="text-[10px] tracking-[0.2em] uppercase text-gray-400 mb-1">
-        {product.brand}
-      </p>
-      <p className="text-sm font-semibold text-gray-900 leading-snug mb-1 group-hover:text-[#8B8B3E] transition-colors duration-200">
-        {product.name}
-      </p>
-      <p className="text-sm text-gray-600">{product.price}</p>
-    </div>
+      {/* Quick add pill */}
+      <motion.div
+        className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-gray-900 text-[9px] tracking-[0.18em] uppercase font-bold px-3 py-1.5 rounded-full shadow-md"
+        initial={{ opacity: 0, y: -8 }}
+        animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : -8 }}
+        transition={{ duration: 0.3 }}
+      >
+        Quick Add
+      </motion.div>
+    </motion.div>
   );
 }
 
 // ─── Section Card ──────────────────────────────────────────────────────────
 function SectionCard({ section }: { section: Section }) {
   const [activeFilter, setActiveFilter] = useState(section.filters[0]);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (dir: "left" | "right") => {
@@ -283,24 +295,52 @@ function SectionCard({ section }: { section: Section }) {
           </h2>
         </div>
 
-        {/* Filters + nav */}
+        {/* Dropdown + nav */}
         <div className="flex items-center gap-3 flex-wrap">
-          {/* Filter pills */}
-          <div className="flex items-center gap-2">
-            {section.filters.map((f) => (
-              <button
-                key={f}
-                onClick={() => setActiveFilter(f)}
-                className="text-[11px] tracking-[0.12em] uppercase font-semibold px-5 py-4 rounded-full border transition-all duration-200"
-                style={{
-                  background: activeFilter === f ? "#8B8B3E" : "transparent",
-                  color: activeFilter === f ? "#fff" : "#6b7280",
-                  borderColor: activeFilter === f ? "#8B8B3E" : "#e5e7eb",
-                }}
+          {/* Price dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+              className="flex items-center gap-2 text-[11px] tracking-[0.12em] uppercase font-semibold px-4 py-2.5 rounded-full border border-gray-200 text-gray-600 hover:border-[#8B8B3E] transition-colors"
+            >
+              {activeFilter}
+              <svg
+                width="12"
+                height="12"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                className={`transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
               >
-                {f}
-              </button>
-            ))}
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <AnimatePresence>
+              {dropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -8, scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-full mt-2 right-0 bg-white border border-gray-100 rounded-xl shadow-lg py-2 min-w-[140px] z-30"
+                >
+                  {section.filters.map((f) => (
+                    <button
+                      key={f}
+                      onClick={() => { setActiveFilter(f); setDropdownOpen(false); }}
+                      className={`w-full text-left px-4 py-2 text-[11px] tracking-[0.1em] uppercase font-medium transition-colors ${
+                        activeFilter === f
+                          ? "text-[#8B8B3E] bg-[#8B8B3E]/5"
+                          : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
+                      }`}
+                    >
+                      {f}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           {/* Arrow nav */}
@@ -347,8 +387,8 @@ function SectionCard({ section }: { section: Section }) {
         className="flex gap-4 px-3 py-7 overflow-x-auto scrollbar-hide"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        {section.products.map((p) => (
-          <ProductCard key={p.id} product={p} />
+        {section.products.map((p, i) => (
+          <ProductCard key={p.id} product={p} index={i} />
         ))}
         {/* View all card */}
         <div className="shrink-0 w-[220px] sm:w-[240px] flex items-center justify-center">
